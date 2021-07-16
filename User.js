@@ -9,11 +9,11 @@ async function createUser() {
     });
 }
 
-createUser();
+//createUser();
 
 async function findUser(address) {
-    const user = await User.findOne({ address: address });
+    const user = await User.findOne({ address: /aborn/i });
     console.log(user);
 }
 
-findUser("2779 Aborn Rd");
+findUser("asdfasdf");
