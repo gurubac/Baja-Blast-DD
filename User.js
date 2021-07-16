@@ -12,9 +12,8 @@ async function createUser() {
 createUser();
 
 async function findUser(address) {
-    
-    User.findOne({ address: address });
-    console.log(`Found user: ${User.address}`);
+    const user = await User.findOne({ address: address });
+    console.log(user);
 }
 
 findUser("2779 Aborn Rd");
