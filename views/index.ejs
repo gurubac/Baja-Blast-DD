@@ -84,7 +84,9 @@
       </div>
     </div>
     <%locationList.forEach(location => {%>
-      <p><%= location.address %></p>
+      <p>
+        <%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %>
+      </p>
     <%})%>
     <script src="assets/js/main.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
