@@ -83,28 +83,9 @@
         </div>
       </div>
     </div>
-    <p id = "users"></p>
-    <script>
-      fetch('http://localhost:3000/api/locations')
-      
-      .then(function (response) {
-	      return response.json();
-      })
-      
-      .then(function (data) {
-	    //console.log(data);
-      document.getElementById("users").innerHTML = 
-      `Address: ${locations.address} <br>
-      City: ${location.city} <br>
-      State: ${location.state} <br>
-      Zip: ${location.zip}`
-      })
-
-      .catch(function (err) {
-	      console.warn('Something went wrong.', err);
-      });
-    </script>
-
+    <%locationList.forEach(location => {%>
+      <p><%= location.address %></p>
+    <%})%>
     <script src="assets/js/main.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
