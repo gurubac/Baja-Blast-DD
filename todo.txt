@@ -8,3 +8,7 @@ Comments/Voting system type thing
 - make buttons (priority : high)
 - make them display results through appending comments type system (priority : high)
 - front end style (priority : low)
+
+
+Colors
+- change em to hex/rgb value of baja blast freeze image to be super exact (priority : super low)
