@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <title>blast</title>
+  <title>Baja Blast Down Detector</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap" />
@@ -32,7 +32,6 @@
           text-align: center;
           border-color: rgb(33, 217, 74);
         ">
-      truss
     </p>
   </div>
   <div class="text-warning">
@@ -62,6 +61,7 @@
     </div>
   </div>
 
+<!-- Search bar code to display each location in database with a forEach loop to loop through the response rendered from server by res.render (line 31). -->
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
@@ -72,7 +72,6 @@
         </li>
       <%})%>
     </ul>
-
 
     <!-- Search bar front end filter code -->
     <script>
