@@ -73,10 +73,6 @@
             >
               About Us
             </p>
-            <form id="form"> 
-                <input type="search" id="query" name="q" placeholder="Search...">
-                <button>Search</button>
-            </form>
           </div>
           <div class="col-md-4"><p class="text-center">FAQ</p></div>
           <div class="col-md-4"><p class="text-center">Github</p></div>
@@ -85,9 +81,38 @@
     </div>
     <%locationList.forEach(location => {%>
       <p>
-        <%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href = "http://localhost:3000/aborn"><%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %></a>
+          </div>
+        </div>
       </p>
     <%})%>
+    <script>
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+          txtValue = a[i].textContent || a[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+          } else {
+            a[i].style.display = "none";
+          }
+        }
+      }
+      </script>
     <script src="assets/js/main.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
