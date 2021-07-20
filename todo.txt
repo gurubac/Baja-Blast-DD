@@ -1,0 +1,10 @@
+URLS
+- make urls for each location work (priority : high)
+- find efficient way to make url routes for sites (priority : not high)
+
+
+Comments/Voting system type thing
+- data structure model - how to make different comments/votes for different locations (figure this out, priority : high)
+- make buttons (priority : high)
+- make them display results through appending comments type system (priority : high)
+- front end style (priority : low)
