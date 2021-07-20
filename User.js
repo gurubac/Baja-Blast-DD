@@ -1,19 +1,22 @@
 const User = require("./models/Location");
 
+// async function createUser() {
+//     const newUser = await User.create({
+//         address: "2779 Aborn Rd",
+//         city: "San Jose",
+//         state: "CA",
+//         zip: "95121"
+//     });
+// }
+
 async function createUser() {
     const newUser = await User.create({
-        address: "2779 Aborn Rd",
-        city: "San Jose",
+        address: "811 Kifer Rd",
+        city: "Sunnyvale",
         state: "CA",
-        zip: "95121"
+        zip: "94086"
     });
 }
+console.log("Starting User.js");
 
-//createUser();
-
-async function findUser(address) {
-    const user = await User.findOne({ address: /aborn/i });
-    console.log(user);
-}
-
-findUser("asdfasdf");
+createUser();

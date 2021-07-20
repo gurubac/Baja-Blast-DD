@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT;
 const signale = require('signale');
 const Location = require('../models/Location');
+//const User = require('../User');
 
 mongoURL = process.env.MONGO_URL;
 

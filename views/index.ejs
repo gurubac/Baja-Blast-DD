@@ -79,17 +79,20 @@
         </div>
       </div>
     </div>
-    <%locationList.forEach(location => {%>
-      <p>
-        <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-          <div id="myDropdown" class="dropdown-content">
-            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-            <a href = "http://localhost:3000/aborn"><%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %></a>
+    <p>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <%locationList.forEach(location => {%>
+      
+            <a href = "<%= `${location.address}` %> "><%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %></a>
           </div>
         </div>
       </p>
     <%})%>
+
+    <!-- Search bar front end filter code -->
     <script>
       /* When the user clicks on the button,
       toggle between hiding and showing the dropdown content */
