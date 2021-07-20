@@ -1,122 +1,100 @@
 <!DOCTYPE html>
 <html lang="en" style="color: rgb(0, 0, 0); font-family: Aclonica, sans-serif">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>blast</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body
-    style="
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>blast</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body style="
       color: rgb(59, 146, 195);
       background: rgb(40, 44, 44);
       font-family: Alatsi, sans-serif;
-    "
-  >
-    <div style="border-color: rgb(75, 166, 52)">
-      <h1
-        style="
+    ">
+  <div style="border-color: rgb(75, 166, 52)">
+    <h1 style="
           color: rgb(0, 255, 148);
           text-align: center;
           font-size: 100px;
           font-family: Alatsi, sans-serif;
-        "
-      >
-        Baja Blast Down Detector
-      </h1>
-      <p
-        style="
+        ">
+      Baja Blast Down Detector
+    </h1>
+    <p style="
           color: #49ffb2;
           font-size: 30px;
           text-align: center;
           border-color: rgb(33, 217, 74);
-        "
-      >
-        truss
-      </p>
-    </div>
-    <div class="text-warning">
-      <div class="container">
-        <div
-          class="row"
-          style="
+        ">
+      truss
+    </p>
+  </div>
+  <div class="text-warning">
+    <div class="container">
+      <div class="row" style="
             font-size: 30px;
             color: rgb(139, 142, 143);
             text-decoration: underline;
-          "
-        >
-          <div class="col-md-4">
-            <p
-              class="text-center"
-              style="
+          ">
+        <div class="col-md-4">
+          <p class="text-center" style="
                 text-align: center;
                 margin: 0px 0px 0px;
                 font-size: 30px;
                 color: rgb(64, 255, 95);
-              "
-            >
-              About Us
-            </p>
-          </div>
-          <div class="col-md-4"><p class="text-center">FAQ</p></div>
-          <div class="col-md-4"><p class="text-center">Github</p></div>
+              ">
+            About Us
+          </p>
+        </div>
+        <div class="col-md-4">
+          <p class="text-center">FAQ</p>
+        </div>
+        <div class="col-md-4">
+          <p class="text-center">Github</p>
         </div>
       </div>
     </div>
-    <p>
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-          <%locationList.forEach(location => {%>
-      
-            <a href = "<%= `${location.address}` %> "><%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %></a>
-          </div>
-        </div>
-      </p>
-    <%})%>
+  </div>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    <ul id="myUL">
+      <%locationList.forEach(location=> {%>
+        <li>
+          <a href="<%= `${location.address}` %> ">
+            <%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %>
+          </a>
+        </li>
+      <%})%>
+    </ul>
+
 
     <!-- Search bar front end filter code -->
     <script>
-      /* When the user clicks on the button,
-      toggle between hiding and showing the dropdown content */
       function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-      
-      function filterFunction() {
-        var input, filter, ul, li, a, i;
+        var input, filter, ul, li, a, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("a");
-        for (i = 0; i < a.length; i++) {
-          txtValue = a[i].textContent || a[i].innerText;
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
+            li[i].style.display = "";
           } else {
-            a[i].style.display = "none";
+            li[i].style.display = "none";
           }
         }
       }
-      </script>
+    </script>
     <script src="assets/js/main.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+</body>
+
 </html>
