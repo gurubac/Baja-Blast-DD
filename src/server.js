@@ -8,7 +8,6 @@ const Location = require('../models/Location');
 //const User = require('../User');
 
 mongoURL = process.env.MONGO_URL;
-
 //connect to mongodb
 mongoose.connect(mongoURL, {
         useNewUrlParser: true,
@@ -22,7 +21,7 @@ mongoose.connect(mongoURL, {
       .catch((err) => {
         signale.error(err);
       });
-
+app.use(express.static("public")); 
 app.set('view engine','ejs')
 
 app.get('/', (req, res) => {
@@ -33,6 +32,17 @@ app.get('/', (req, res) => {
     })
   })
 })
+async function findUser(address){
+  return Location.findOne({ address: address });
+}
+
+
+app.get('/2779%20Aborn%20Rd', async (req, res) => {
+  
+  let data = await findUser('2779 Aborn Rd');
+    //console.log(data);
+   res.render('results')
+  })
 
 app.listen(PORT, () => {
   console.log(`Deployed at http://localhost:${PORT}`)
