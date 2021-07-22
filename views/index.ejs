@@ -68,7 +68,7 @@
       <%locationList.forEach(location=> {%>
         <li>
           <a href="<%= `${location.address}` %> ">
-            <%= `${location.address}, in ${location.city} ${location.state} ${location.zip}` %>
+            <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
           </a>
         </li>
       <%})%>
