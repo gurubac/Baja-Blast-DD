@@ -40,11 +40,17 @@ async function findUser(address) {
 }
 
 app.get("/2779%20Aborn%20Rd", async (req, res) => {
-  let data = await findUser("2779 Aborn Rd");
-  //console.log(data);
+  let address = {address : "2779 Aborn Rd"}
+  let status = {city: "San Jose"}
+  let doc = await Location.findOneAndUpdate(address, status, {
+    new: true
+  });
+  let data = await findUser(address);
+  console.log(data);
   res.render("results", {
     location: data,
   });
+  
 });
 
 app.get("/811%20Kifer%20Rd", async (req, res) => {
@@ -54,6 +60,7 @@ app.get("/811%20Kifer%20Rd", async (req, res) => {
     location: data,
   });
 });
+   
 
 app.listen(PORT, () => {
   console.log(`Deployed at http://localhost:${PORT}`);
