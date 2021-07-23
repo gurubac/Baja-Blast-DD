@@ -8,7 +8,7 @@ async function createUser() {
             state: "CA",
             zip: "95121",
             comment : {
-                status : "working",
+                status : "",
                 timestamp : new Date()
             }
         });

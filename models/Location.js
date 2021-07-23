@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     city: { type: String, required: true },
     state: { type: String, required: true },
     zip: { type: String, required: true },
-    comment : { type: Object, required: false }
+    comment : { type: Array, required: false }
 });
 
 const Location = mongoose.model('Location', userSchema);

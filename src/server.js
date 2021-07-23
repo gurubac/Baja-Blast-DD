@@ -40,13 +40,24 @@ async function findUser(address) {
 }
 
 app.get("/2779%20Aborn%20Rd", async (req, res) => {
-  let address = {address : "2779 Aborn Rd"}
-  let status = {city: "San Jose"}
-  let doc = await Location.findOneAndUpdate(address, status, {
-    new: true
-  });
+  let address = "2779 Aborn Rd";
+  
+  //finding location in database and pushing a comment array with status and timestamp
+  let findLocation = await Location.findOneAndUpdate(
+    { address: "2779 Aborn Rd" },
+    {
+      $push: {
+        comment: [
+          {status: "new comment"}
+        ]
+      }
+    }
+  )
+  
   let data = await findUser(address);
-  console.log(data);
+  //console.log(data);
+
+  //once we get data render the data along with the page
   res.render("results", {
     location: data,
   });
