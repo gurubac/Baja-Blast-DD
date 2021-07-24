@@ -77,7 +77,26 @@
     <script>
         function yesSubmit() {
             console.log("yes button was clicked")
-            console.log(moment(new Date()).format("h:mm A - MMMM Do, YYYY"));
+            let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");
+            let status = "WORKING"
+
+            let data = {
+                timestamp: timestamp,
+                status: status
+            };
+            
+            fetch('http://localhost:3000/api/info', {
+                method: 'POST',
+                mode:'cors',
+                body: JSON.stringify(data),
+                headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+    });
         }
 
         function noSubmit() {
