@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT;
 const signale = require("signale");
 const Location = require("../models/Location");
+const cors = require('cors')
+
 //const User = require('../User');
 
 mongoURL = process.env.MONGO_URL;
@@ -23,6 +25,7 @@ mongoose
     signale.error(err);
   });
 
+app.use(cors())
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
