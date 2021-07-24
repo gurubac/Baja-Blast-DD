@@ -25,6 +25,9 @@ mongoose
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 
 app.get("/", (req, res) => {
   Location.find({}, function (err, locations) {
@@ -35,12 +38,9 @@ app.get("/", (req, res) => {
   });
 });
 
-async function findUser(address) {
-  return Location.findOne({ address: address });
-}
 
-app.get("/2779%20Aborn%20Rd", async (req, res) => {
-  let address = "2779 Aborn Rd";
+app.post("/api/info", async (req, res) => {
+  let data = req.body;
   
   //finding location in database and pushing a comment array with status and timestamp
   let findLocation = await Location.findOneAndUpdate(
@@ -48,11 +48,20 @@ app.get("/2779%20Aborn%20Rd", async (req, res) => {
     {
       $push: {
         comment: [
-          {status: "new comment"}
+          {status: data.status},
+          {timestamp: data.timestamp}
         ]
       }
     }
   )
+});
+
+async function findUser(address) {
+  return Location.findOne({ address: address });
+}
+
+app.get("/2779%20Aborn%20Rd", async (req, res) => {
+  let address = "2779 Aborn Rd";
   
   let data = await findUser(address);
   //console.log(data);

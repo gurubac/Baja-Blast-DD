@@ -27,9 +27,14 @@
                         Is the machine working?</h1>
                     <div class="btn-group" role="group"
                         style="transform: translate(72px);width: 450px;color: rgb(78,55,56);border-color: transparent;height: 200px;padding-top: 80px;">
-                        <button class="btn btn-primary" type="button"
+                        
+                        <!-- yes button -->
+                        <button class="btn btn-primary" type="button" id = "yesButton" onclick = "yesSubmit();"
                             style="transform: translate(-8px);background: rgb(3,252,148);color: rgb(28,27,27);border-top-left-radius: 50px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;font-size: 40px;width: 130.84px;height: 200px;">YES
-                            :)</button><button class="btn btn-primary" type="button"
+                            :)</button>
+                            
+                        <!-- no button -->
+                            <button class="btn btn-primary" type="button" id = "noButton" onclick = "noSubmit();"
                             style="transform: translate(22px);background: rgb(200,13,13);border-top-left-radius: 50px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;font-size: 40px;width: 130px;height: 200px;color: rgb(255,255,255);">NO
                             :(</button></div>
                 </div>
@@ -44,7 +49,7 @@
                             STATUS: UP - 8:00PM - AUGUST 32, 2010</p>
                         <p
                         style="background: #03fc94;border: 3px solid rgb(68,68,68);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;color: rgb(0,0,0);text-align: center;">
-                        STATUS: <%= `testing ${location.comment[0].status}`%> </p>
+                        STATUS: </p>
                         <p>Entry 4</p>
                         <p>Entry 5</p>
                     </div>
@@ -69,6 +74,38 @@
             </div>
         </div>
     </div>
+    <script>
+        function yesSubmit() {
+            console.log("yes button was clicked")
+            console.log(moment(new Date()).format("h:mm A - MMMM Do, YYYY"));
+        }
+
+        function noSubmit() {
+            console.log("no button was clicked")
+            let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");
+            let status = "NOT WORKING"
+
+            let data = {
+                timestamp: timestamp,
+                status: status
+            };
+            
+            fetch('http://localhost:3000/api/info', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+    });
+
+    }
+
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
