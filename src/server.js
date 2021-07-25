@@ -78,8 +78,10 @@ app.get("/2779%20Aborn%20Rd", async (req, res) => {
 });
 
 app.get("/811%20Kifer%20Rd", async (req, res) => {
-  let data = await findUser("811 Kifer Rd");
-  //console.log(data);
+  let address = "811 Kifer Rd";
+  let data = await findUser(address);
+
+  //once we get properly updated/deleted data render the data along with the page
   res.render("results", {
     location: data,
   });
