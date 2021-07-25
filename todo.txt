@@ -32,3 +32,11 @@ GITHUB README
 
 Comments/Voting system type thing
 - work on front end style (priority : low)
+
+TIMESTAMPS 
+- once they are in the database, they are stuck to the timezone they were created in which would lead to people in different time zones seeing the previously created TIMESTAMPS
+- this issue is a bit trivial to be honest, because people in different timezones have no need to see the status of the machine in a different time zone, but it would be nice to fix
+- (priority : super low)
+
+ROUTES 
+- for loop through the database and add routes for all locations
