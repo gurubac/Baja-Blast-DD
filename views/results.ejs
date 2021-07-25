@@ -38,20 +38,21 @@
                             style="transform: translate(22px);background: rgb(200,13,13);border-top-left-radius: 50px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;font-size: 40px;width: 130px;height: 200px;color: rgb(255,255,255);">NO
                             :(</button></div>
                 </div>
-                <div class="col-md-6" style="background: rgb(48,48,48);width: 660px;height: 500px;">
+                <div class="col-md-6" style="background: rgb(48,48,48);width: 660px;height: 500px; overflow: scroll">
                     <h1 style="text-align: center;color: rgb(3,252,148);padding: 10px;">Recent Results</h1>
                     <div style="padding-top: 10px;">
-                        <p
-                            style="background: #c80d0d;color: rgb(255,255,255);text-align: center;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border: 3px solid rgb(68,68,68) ;">
-                            STATUS: DOWN - 10:00PM - JULY 21, 2010&nbsp;</p>
-                        <p
-                            style="background: #03fc94;border: 3px solid rgb(68,68,68);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;color: rgb(0,0,0);text-align: center;">
-                            STATUS: UP - 8:00PM - AUGUST 32, 2010</p>
-                        <p
-                        style="background: #03fc94;border: 3px solid rgb(68,68,68);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;color: rgb(0,0,0);text-align: center;">
-                        STATUS: </p>
-                        <p>Entry 4</p>
-                        <p>Entry 5</p>
+                        <% for (let i = 19; i > -1; i--) { %>
+                            <% //machine working scenario%>
+                            <% if (location.comment[i].status == "WORKING") {%> 
+                                <p style="background: #03fc94;border: 3px solid rgb(68,68,68);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;color: rgb(0,0,0);text-align: center;">
+                                    <%= `STATUS: ${location.comment[i].status} - ${location.comment[i].timestamp}`%>
+                                </p>
+                            <% } else if (location.comment[i].status == "NOT WORKING"){ %> 
+                                <p style="background: #c80d0d;color: rgb(255,255,255);text-align: center;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border: 3px solid rgb(68,68,68) ;">
+                                    <%= `STATUS: ${location.comment[i].status} - ${location.comment[i].timestamp}`%>&nbsp;
+                                </p>
+                            <% } %>  
+                        <% } %> 
                     </div>
                 </div>
             </div>

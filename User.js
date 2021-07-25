@@ -6,11 +6,7 @@ async function createUser() {
             address: "2779 Aborn Rd",
             city: "San Jose",
             state: "CA",
-            zip: "95121",
-            comment : {
-                status : "",
-                timestamp : new Date()
-            }
+            zip: "95121"
         });
     } catch (err) { 
         console.log(err);

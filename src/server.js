@@ -7,6 +7,7 @@ const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
 
+//create a new location
 //const User = require('../User');
 
 mongoURL = process.env.MONGO_URL;
@@ -51,8 +52,8 @@ app.post("/api/info", async (req, res) => {
     {
       $push: {
         comment: [
-          {status: data.status},
-          {timestamp: data.timestamp}
+          {status: data.status,
+          timestamp: data.timestamp}
         ]
       }
     }
