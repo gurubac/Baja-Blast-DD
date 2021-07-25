@@ -43,7 +43,24 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/api/info", async (req, res) => {
+app.post("/2779%20Aborn%20Rd/info", async (req, res) => {
+  let data = req.body;
+  
+  //finding location in database and pushing a comment array with status and timestamp
+  let findLocation = await Location.findOneAndUpdate(
+    { address: "2779 Aborn Rd" },
+    {
+      $push: {
+        comment: [
+          {status: data.status,
+          timestamp: data.timestamp}
+        ]
+      }
+    }
+  )
+});
+
+app.post("/811%20Kifer%20Rd/info", async (req, res) => {
   let data = req.body;
   
   //finding location in database and pushing a comment array with status and timestamp
