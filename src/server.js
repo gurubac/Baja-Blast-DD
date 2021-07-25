@@ -65,7 +65,7 @@ app.post("/811%20Kifer%20Rd/info", async (req, res) => {
   
   //finding location in database and pushing a comment array with status and timestamp
   let findLocation = await Location.findOneAndUpdate(
-    { address: "2779 Aborn Rd" },
+    { address: "811 Kifer Rd" },
     {
       $push: {
         comment: [
