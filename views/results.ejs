@@ -38,10 +38,10 @@
                             style="transform: translate(22px);background: rgb(200,13,13);border-top-left-radius: 50px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;font-size: 40px;width: 130px;height: 200px;color: rgb(255,255,255);">NO
                             :(</button></div>
                 </div>
-                <div class="col-md-6" style="background: rgb(48,48,48);width: 660px;height: 500px; overflow: scroll">
+                <div class="col-md-6" style="background: rgb(48,48,48);width: 660px;height: 500px; overflow: auto">
                     <h1 style="text-align: center;color: rgb(3,252,148);padding: 10px;">Recent Results</h1>
                     <div style="padding-top: 10px;">
-                        <% for (let i = 19; i > -1; i--) { %>
+                        <% for (let i = location.comment.length - 1; i >= location.comment.length - 20 && i >= 0; i--) { %>
                             <% //machine working scenario%>
                             <% if (location.comment[i].status == "WORKING") {%> 
                                 <p style="background: #03fc94;border: 3px solid rgb(68,68,68);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;color: rgb(0,0,0);text-align: center;">

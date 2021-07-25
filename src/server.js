@@ -66,14 +66,14 @@ async function findUser(address) {
 
 app.get("/2779%20Aborn%20Rd", async (req, res) => {
   let address = "2779 Aborn Rd";
-  
   let data = await findUser(address);
-  //console.log(data);
 
-  //once we get data render the data along with the page
+  //once we get properly updated/deleted data render the data along with the page
   res.render("results", {
     location: data,
   });
+
+  
   
 });
 
