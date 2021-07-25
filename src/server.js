@@ -32,6 +32,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+async function findUser(address) {
+  return Location.findOne({ address: address });
+}
 
 app.get("/", (req, res) => {
   Location.find({}, function (err, locations) {
@@ -76,10 +79,6 @@ app.post("/811%20Kifer%20Rd/info", async (req, res) => {
     }
   )
 });
-
-async function findUser(address) {
-  return Location.findOne({ address: address });
-}
 
 app.get("/2779%20Aborn%20Rd", async (req, res) => {
   let address = "2779 Aborn Rd";
