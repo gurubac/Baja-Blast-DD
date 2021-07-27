@@ -90,6 +90,7 @@
         const socket = io(baseURL)
         socket.on('connection')
 
+        
         function yesSubmit(addressURL) {
             console.log("yes button was clicked")
             let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");
@@ -102,11 +103,9 @@
 
             JSON.stringify(data);
 
-            let sendResults = () => {
-                socket.emit('results', data)
-            }
-
-            sendResults();
+            
+            socket.emit('results', data)
+            
             
             socket.on('results', (data) => {
                 console.log(data + "hi")
@@ -127,6 +126,7 @@
     // });
 
         }
+    
 
         function noSubmit(addressURL) {
             console.log("no button was clicked")

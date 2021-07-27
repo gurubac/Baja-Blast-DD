@@ -113,20 +113,20 @@ io.on("connection", (socket) => {
   console.log(`User connected - ${socket.id}`);
 
   socket.on("results", async (data) => {  
-    // let findLocation = await Location.findOneAndUpdate(
-    //   { address: "2779 Aborn Rd" },
-    //   {
-    //     $push: {
-    //       comment: [
-    //         {status: data.status,
-    //         timestamp: data.timestamp}
-    //       ]
-    //     }
-    //   }
-    // )
-    // console.log(`datastatus is : ${data.status}`);
-    // console.log(`datatimestamp is: ${data.timestamp}`);
-    // console.log('running in server' + data);
+    await Location.findOneAndUpdate(
+      { address: "2779 Aborn Rd" },
+      {
+        $push: {
+          comment: [
+            {status: data.status,
+            timestamp: data.timestamp}
+          ]
+        }
+      }
+    )
+    console.log(`datastatus is : ${data.status}`);
+    console.log(`datatimestamp is: ${data.timestamp}`);
+    console.log('running in server' + data);
     io.sockets.emit("results", data);
   });
 });
