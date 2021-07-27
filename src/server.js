@@ -117,6 +117,6 @@ io.on("connection", (socket) => {
 
   socket.on("results", (data) => {  
     console.log(data);
-    socket.emit("results", data);
+    io.sockets.emit("results", data);
   });
 });
