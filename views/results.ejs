@@ -79,12 +79,29 @@
             </div>
         </div>
     </div>
+    <button onclick = "sendResults();">click to send log</button>
+    <h1 id = "resultsDisplay">s</h1>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         //changeable url
         const baseURL = "http://localhost:3000"
+        const socket = io(baseURL)
+        socket.on('connection')
+
+        const sendResults = () => {
+            socket.emit('results', "Hey it worked")
+        }
+
+        socket.on('results', (data) => {
+            console.log(data + "hi")
+            document.getElementById("resultsDisplay").innerHTML = data
+        })
+        
+       
+        
+
         function yesSubmit(addressURL) {
             console.log("yes button was clicked")
             let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");

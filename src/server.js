@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT;
 const signale = require("signale");
 const Location = require("../models/Location");
-const cors = require('cors')
+const cors = require('cors');
+const { SocketAddress } = require("net");
 
 //create a new location
 //const User = require('../User');
@@ -109,4 +110,13 @@ app.get("/811%20Kifer%20Rd", async (req, res) => {
    
 server.listen(PORT, () => {
   signale.success(`Server running on port ${PORT}`);
+});
+
+io.on("connection", (socket) => {
+  console.log(`User connected - ${socket.id}`);
+
+  socket.on("results", (data) => {  
+    console.log(data);
+    socket.emit("results", data);
+  });
 });
