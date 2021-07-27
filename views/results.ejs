@@ -30,7 +30,7 @@
                         <% let addressURL = location.address%>
                         <!-- yes button -->
                         <button class="btn btn-primary" type="button" id = "yesButton" onclick = "yesSubmit('<%= addressURL %>');"
-                            style="transform: translate(-8px);background: rgb(3,252,148);color: rgb(28,27,27);border-top-left-radius: 50px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;font-size: 40px;width: 130.84px;height: 200px;hover {background: #e68a00;}">YES
+                            style="transform: translate(-8px);background: rgb(3,252,148);color: rgb(28,27,27);border-top-left-radius: 50px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;border-bottom-left-radius: 50px;font-size: 40px;width: 130.84px;height: 200px;">YES
                             :)</button>
                             
                         <!-- no button -->
@@ -79,9 +79,12 @@
             </div>
         </div>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         //changeable url
-        const baseURL = "https://bajablastr.herokuapp.com"
+        const baseURL = "http://localhost:3000"
         function yesSubmit(addressURL) {
             console.log("yes button was clicked")
             let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");
@@ -134,8 +137,6 @@
     }
 
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

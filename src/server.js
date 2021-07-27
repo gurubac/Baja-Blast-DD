@@ -10,6 +10,10 @@ const cors = require('cors')
 //create a new location
 //const User = require('../User');
 
+//socket 
+const server = require("http").createServer(app);
+const io = require("socket.io")(server, {cors : {origin : '*'}});
+
 mongoURL = process.env.MONGO_URL;
 //connect to mongodb
 mongoose
@@ -103,7 +107,6 @@ app.get("/811%20Kifer%20Rd", async (req, res) => {
   });
 });
    
-
-app.listen(PORT, () => {
-  console.log(`Deployed at http://localhost:${PORT}`);
+server.listen(PORT, () => {
+  signale.success(`Server running on port ${PORT}`);
 });
