@@ -6,7 +6,6 @@ const PORT = process.env.PORT;
 const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors');
-const { SocketAddress } = require("net");
 
 //create a new location
 //const User = require('../User');
@@ -51,39 +50,39 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/2779%20Aborn%20Rd/info", async (req, res) => {
-  let data = req.body;
+// app.post("/2779%20Aborn%20Rd/info", async (req, res) => {
+//   let data = req.body;
   
-  //finding location in database and pushing a comment array with status and timestamp
-  let findLocation = await Location.findOneAndUpdate(
-    { address: "2779 Aborn Rd" },
-    {
-      $push: {
-        comment: [
-          {status: data.status,
-          timestamp: data.timestamp}
-        ]
-      }
-    }
-  )
-});
+//   //finding location in database and pushing a comment array with status and timestamp
+//   let findLocation = await Location.findOneAndUpdate(
+//     { address: "2779 Aborn Rd" },
+//     {
+//       $push: {
+//         comment: [
+//           {status: data.status,
+//           timestamp: data.timestamp}
+//         ]
+//       }
+//     }
+//   )
+// });
 
-app.post("/811%20Kifer%20Rd/info", async (req, res) => {
-  let data = req.body;
+// app.post("/811%20Kifer%20Rd/info", async (req, res) => {
+//   let data = req.body;
   
-  //finding location in database and pushing a comment array with status and timestamp
-  let findLocation = await Location.findOneAndUpdate(
-    { address: "811 Kifer Rd" },
-    {
-      $push: {
-        comment: [
-          {status: data.status,
-          timestamp: data.timestamp}
-        ]
-      }
-    }
-  )
-});
+//   //finding location in database and pushing a comment array with status and timestamp
+//   let findLocation = await Location.findOneAndUpdate(
+//     { address: "811 Kifer Rd" },
+//     {
+//       $push: {
+//         comment: [
+//           {status: data.status,
+//           timestamp: data.timestamp}
+//         ]
+//       }
+//     }
+//   )
+// });
 
 app.get("/2779%20Aborn%20Rd", async (req, res) => {
   let address = "2779 Aborn Rd";
@@ -94,8 +93,6 @@ app.get("/2779%20Aborn%20Rd", async (req, res) => {
     location: data,
   });
 
-  
-  
 });
 
 app.get("/811%20Kifer%20Rd", async (req, res) => {
@@ -115,8 +112,21 @@ server.listen(PORT, () => {
 io.on("connection", (socket) => {
   console.log(`User connected - ${socket.id}`);
 
-  socket.on("results", (data) => {  
-    console.log(data);
+  socket.on("results", async (data) => {  
+    // let findLocation = await Location.findOneAndUpdate(
+    //   { address: "2779 Aborn Rd" },
+    //   {
+    //     $push: {
+    //       comment: [
+    //         {status: data.status,
+    //         timestamp: data.timestamp}
+    //       ]
+    //     }
+    //   }
+    // )
+    // console.log(`datastatus is : ${data.status}`);
+    // console.log(`datatimestamp is: ${data.timestamp}`);
+    // console.log('running in server' + data);
     io.sockets.emit("results", data);
   });
 });
