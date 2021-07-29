@@ -63,7 +63,8 @@
   </div>
 
 <!-- Search bar code to display each location in database with a forEach loop to loop through the response rendered from server by res.render (line 31). -->
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<div class = "center" >
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter a location..." title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
         <li>
@@ -73,7 +74,7 @@
         </li>
       <%})%>
     </ul>
-
+  </div>
     <!-- Search bar front end filter code -->
     <script>
       function myFunction() {
@@ -82,16 +83,25 @@
         filter = input.value.toUpperCase();
         ul = document.getElementById("myUL");
         li = ul.getElementsByTagName("li");
+        
+
+
         for (i = 0; i < li.length; i++) {
           a = li[i].getElementsByTagName("a")[0];
           txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        
+          //if text matches, show the matching item
+         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
           } else {
+            //if text does not match the item, do not show the item
             li[i].style.display = "none";
           }
         }
       }
+
+
+
     </script>
     <!-- <script src="../assets/bootstrap/js/main.js"></script> -->
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
