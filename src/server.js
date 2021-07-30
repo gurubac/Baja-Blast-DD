@@ -49,56 +49,8 @@ app.get("/", (req, res) => {
   });
 });
 
-
-app.post("/2779%20Aborn%20Rd/info", async (req, res) => {
-  let data = req.body;
-  
-  //finding location in database and pushing a comment array with status and timestamp
-  let findLocation = await Location.findOneAndUpdate(
-    { address: "2779 Aborn Rd" },
-    {
-      $push: {
-        comment: [
-          {status: data.status,
-          timestamp: data.timestamp}
-        ]
-      }
-    }
-  )
-});
-
-app.post("/811%20Kifer%20Rd/info", async (req, res) => {
-  let data = req.body;
-  
-  //finding location in database and pushing a comment array with status and timestamp
-  let findLocation = await Location.findOneAndUpdate(
-    { address: "811 Kifer Rd" },
-    {
-      $push: {
-        comment: [
-          {status: data.status,
-          timestamp: data.timestamp}
-        ]
-      }
-    }
-  )
-});
-
-app.get("/2779%20Aborn%20Rd", async (req, res) => {
-  let address = "2779 Aborn Rd";
-  let data = await findUser(address);
-
-  //once we get properly updated/deleted data render the data along with the page
-  res.render("results", {
-    location: data,
-  });
-
-  
-  
-});
-
-app.get("/811%20Kifer%20Rd", async (req, res) => {
-  let address = "811 Kifer Rd";
+app.get("/:address", async (req, res) => {
+  let address = req.params.address;
   let data = await findUser(address);
 
   //once we get properly updated/deleted data render the data along with the page
@@ -107,6 +59,24 @@ app.get("/811%20Kifer%20Rd", async (req, res) => {
   });
 });
    
+app.post("/:address/info", async (req, res) => {
+  let data = req.body;
+  let address = req.params.address;
+  
+  //finding location in database and pushing a comment array with status and timestamp
+  let findLocation = await Location.findOneAndUpdate(
+    { address: address },
+    {
+      $push: {
+        comment: [
+          {status: data.status,
+          timestamp: data.timestamp}
+        ]
+      }
+    }
+  )
+});
+
 server.listen(PORT, () => {
   signale.success(`Server running on port ${PORT}`);
 });
