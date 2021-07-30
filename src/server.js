@@ -6,6 +6,7 @@ const PORT = process.env.PORT;
 const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
+const URL = "http://localhost:3000"
 
 //create a new location
 //const User = require('../User');
@@ -75,6 +76,10 @@ app.post("/:address/info", async (req, res) => {
       }
     }
   )
+});
+
+app.get("*", (req, res) => {
+  res.send(404);
 });
 
 server.listen(PORT, () => {
