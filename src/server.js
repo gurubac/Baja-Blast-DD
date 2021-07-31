@@ -6,17 +6,14 @@ const PORT = process.env.PORT;
 const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
-const URL = "http://localhost:3000"
-
-//create a new location
-//const User = require('../User');
 
 //socket 
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {cors : {origin : '*'}});
 
-mongoURL = process.env.MONGO_URL;
 //connect to mongodb
+const mongoURL = process.env.MONGO_URL;
+
 mongoose
   .connect(mongoURL, {
     useNewUrlParser: true,
@@ -54,7 +51,6 @@ app.get("/:address", async (req, res) => {
   let address = req.params.address;
   let data = await findUser(address);
 
-  //once we get properly updated/deleted data render the data along with the page
   res.render("results", {
     location: data,
   });
@@ -64,8 +60,7 @@ app.post("/:address/info", async (req, res) => {
   let data = req.body;
   let address = req.params.address;
   
-  //finding location in database and pushing a comment array with status and timestamp
-  let findLocation = await Location.findOneAndUpdate(
+  await Location.findOneAndUpdate(
     { address: address },
     {
       $push: {

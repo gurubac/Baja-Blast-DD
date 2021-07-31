@@ -88,7 +88,7 @@
         const baseURL = "http://localhost:3000"
         function yesSubmit(addressURL) {
             console.log("yes button was clicked")
-            let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");
+            let timestamp = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
             let status = "WORKING"
             let data = {
                 timestamp: timestamp,
@@ -111,7 +111,7 @@
         }
         function noSubmit(addressURL) {
             console.log("no button was clicked")
-            let timestamp = moment(new Date()).format("h:mm A - MMMM Do, YYYY");
+            let timestamp = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
             let status = "NOT WORKING"
             let data = {
                 timestamp: timestamp,
