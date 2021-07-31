@@ -1,0 +1,24 @@
+#bruh {
+  float: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+#divtop {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+}
+
