@@ -38,9 +38,6 @@ async function findUser(address) {
   return Location.findOne({ address: address });
 }
 
-
-
-
 app.get("/", (req, res) => {
   Location.find({}, function (err, locations) {
     //console.log(location);
@@ -48,10 +45,6 @@ app.get("/", (req, res) => {
       locationList: locations,
     });
   });
-});
-
-app.get("/resultsrev", (req, res) => {
-  res.render("resultsrev");
 });
 
 app.get("/:address", async (req, res) => {
