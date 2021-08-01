@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <title>blast</title>   
+    <title>Bajablast Down Detector</title>   
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -27,6 +27,7 @@
       href="../styles/Navbar---Logo-Middle---Phone-Logo-Middle.css"
     />
     <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="shortcut icon" href="">
   </head>
   <body
     style="
@@ -106,7 +107,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" style="color: rgb(0, 0, 0)"
+                <a class="nav-link" href="https://github.com/gurubac/bajablastr" style="color: rgb(0, 0, 0)"
                   >Github</a
                 >
               </li>
@@ -137,7 +138,7 @@
           Is the machine working?
         </h1>
       </div>
-      <% let addressURL = location.address%>
+      
       <div style="height: 279%; width: 100%; text-align: center">
         <div class="table-responsive" style="height: 180px">
           <table class="table">
@@ -147,6 +148,7 @@
             <tbody>
               <tr style="height: 50%">
                 <td style="border-width: 0px; height: 80px">
+                  <% let addressURL = location.address%>
                   <button
                     class="btn btn-primary"
                     type="button"
@@ -239,7 +241,7 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         //changeable url
         const baseURL = "https://bajablastr.herokuapp.com"
@@ -265,7 +267,7 @@
     .then(json => {
         console.log(json);
     });
-    window.location = window.location
+    window.location = window.location;
         }
         function noSubmit(addressURL) {
             console.log("no button was clicked")
@@ -288,7 +290,7 @@
     .then(json => {
         console.log(json);
     });
-    window.top.location = window.top.location
+    window.location = window.location;
     }
     </script>
   </body>
