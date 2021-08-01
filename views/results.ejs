@@ -48,7 +48,7 @@
       "
     >
       <nav
-        class="navbar navbar-dark navbar-expand-md"
+        class="navbar navbar-dark navbar-expand-lg"
         id="app-navbar"
         style="width: 100%; align-content: center"
       >
@@ -85,7 +85,8 @@
           <img
             src="../img/bell.png"
             style="width: 59px; transform: translate(6px); margin-right: 1%"
-          /><button
+          />
+          <button
             data-bs-toggle="collapse"
             class="navbar-toggler"
             data-bs-target="#navcol-1"
@@ -148,7 +149,7 @@
             <tbody>
               <tr style="height: 50%">
                 <td style="border-width: 0px; height: 80px">
-                  <% let addressURL = location.address%>
+                  <% let addressURL = location.address %>
                   <button
                     class="btn btn-primary"
                     type="button"
@@ -244,8 +245,8 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         //changeable url
-        const baseURL = "https://bajablastr.herokuapp.com"
-        //const baseURL = "http://localhost:3000"
+        //const baseURL = "https://bajablastr.herokuapp.com"
+        const baseURL = "http://localhost:3000"
         function yesSubmit(addressURL) {
             console.log("yes button was clicked")
             let timestamp = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
