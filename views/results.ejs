@@ -224,7 +224,8 @@
             letter-spacing: 0.5px;
           "
         >
-        <% for (let i = location.comment.length - 1; i >= location.comment.length - 50 && i >= 0; i--) { %>
+        <% let filterLength = 50 %> 
+        <% for (let i = location.comment.length - 1; i >= location.comment.length - filterLength && i >= 0; i--) { %>
             <% //machine working scenario%>
             <% if (location.comment[i].status == "WORKING") {%> 
                 <p style="border: 3px solid rgb(68, 68, 68);background: #03fc94;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;color: rgb(0, 0, 0);text-align: center;margin: auto;width: 69%;letter-spacing: 0.5px;">
