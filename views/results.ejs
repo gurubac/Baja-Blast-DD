@@ -223,8 +223,8 @@
         .then(response => response.json())
         .then(json => {
           console.log(json);
-        }).catch(err => {
-    console.error(err);
+        })().catch(err => {
+    console.log(err);
   });
       window.location = window.location;
     }
@@ -249,8 +249,8 @@
         .then(response => response.json())
         .then(json => {
           console.log(json);
-        }).catch(err => {
-    console.error(err);
+        })().catch(err => {
+    console.log(err);
   });
       window.location = window.location;
     }
