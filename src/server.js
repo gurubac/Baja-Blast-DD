@@ -9,7 +9,7 @@ const cors = require('cors')
 
 //socket 
 const server = require("http").createServer(app);
-const io = require("socket.io")(server, {cors : {origin : 'Access-Control-Allow-Headers'}});
+const io = require("socket.io")(server, {cors : {origin : '*'}});
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
