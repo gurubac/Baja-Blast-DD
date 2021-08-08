@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT;
 const signale = require("signale");
 const Location = require("../models/Location");
-const cors = require('cors')
+//const cors = require('cors')
 
 //socket 
 const server = require("http").createServer(app);
-const io = require("socket.io")(server, {cors : {origin : '*'}});
+//const io = require("socket.io")(server, {cors : {origin : '*'}});
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
