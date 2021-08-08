@@ -11,59 +11,76 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="../styles/dropdown.css" />
+  <link rel="stylesheet" href="../styles/gradient-navbar-1.css" />
+  <link rel="stylesheet" href="../styles/gradient-navbar.css" />
+  <link rel="stylesheet" href="../styles/Navbar---Logo-Middle---Phone-Logo-Middle.css" />
+  <link rel="stylesheet" href="../public/styles/styles.css" />
 </head>
-
 <body style="
-      color: rgb(59, 146, 195);
-      background: rgb(40, 44, 44);
-      font-family: Alatsi, sans-serif;
-    ">
-  <div style="border-color: rgb(75, 166, 52)">
-    <h1 style="
-          color: rgb(0, 255, 148);
-          text-align: center;
-          font-size: 100px;
-          font-family: Alatsi, sans-serif;
-        ">
-      Baja Blast Down Detector
-    </h1>
-    <p style="
-          color: #49ffb2;
-          font-size: 30px;
-          text-align: center;
-          border-color: rgb(33, 217, 74);
-        ">
-    </p>
-  </div>
-  <div class="text-warning">
-    <div class="container">
-      <div class="row" style="
-            font-size: 30px;
-            color: rgb(139, 142, 143);
-            text-decoration: underline;
-          ">
-        <div class="col-md-4">
-          <p class="text-center" style="
+  display: flex;
+  flex-direction : column;
+  min-height: 100vh;
+  color: #3b92c3;
+  background: rgb(40, 44, 44);
+  font-family: Alatsi, sans-serif;
+  width: 100%; ">
+  <div id=" divtop" style="
+        border-color: rgb(75, 166, 52);
+        width: 100%;
+        height: 100%; /*margin-left: auto;*/ /*margin-right: auto;*/
+        filter: saturate(150%);
+      ">
+    <nav class="navbar navbar-dark navbar-expand-lg" id="app-navbar" style="width: 100%; align-content: center">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="padding-top: 5px; margin-right: 26px"><img src="../img/bajablast.png"
+            style="
+                width: 60px;
+                padding-right: 0px;
+                margin-bottom: 0px;
+                margin-right: 0px;
+                margin-left: 12px;
+              " /></a>
+        <div>
+          <h1 style="font-size: 227%; color: rgb(0, 0, 0); margin-left: 4px">
+            Baja Blast
+          </h1>
+          <h1 style="
+                font-size: 122%;
                 text-align: center;
-                margin: 0px 0px 0px;
-                font-size: 30px;
-                color: rgb(64, 255, 95);
+                color: rgb(0, 0, 0);
+                margin-left: 4px;
               ">
-            About Us
-          </p>
+            Down Detector
+          </h1>
         </div>
-        <div class="col-md-4">
-          <p class="text-center">FAQ</p>
+        <img src="../img/bell.png" style="width: 59px; transform: translate(6px); margin-right: 1%" />
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="
+              filter: brightness(200%) invert(100%) saturate(100%);
+              border: 2px solid rgb(60, 113, 42);
+              margin-right: -10px;
+              margin-left: 4px;
+            ">
+          <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" style="color: rgb(0, 0, 0)">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/gurubac/bajablastr" style="color: rgb(0, 0, 0)">Github</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: rgb(0, 0, 0)">Contact</a>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-4">
-          <p class="text-center">Github</p>
-        </div>
+        <div></div>
       </div>
-    </div>
+    </nav>
   </div>
-
 <!-- Search bar code to display each location in database with a forEach loop to loop through the response rendered from server by res.render (line 31). -->
-<div class = "center" >
+<div class = "center" style = "margin-top: 10px";>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter a location..." title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
@@ -75,6 +92,11 @@
       <%})%>
     </ul>
   </div>
+  <footer style="background: rgb(36, 36, 36); text-align: center; margin-top: auto; padding:10px ;">
+    <h4 style="color:rgb(202, 202, 202); ">Baja Blast DD - Made by<span style="color:rgb(91, 243, 159);"> Guru
+      </span>and <span style="color:rgb(184, 105, 230)">Mahir</span></h4>
+  </footer>
+
     <!-- Search bar front end filter code -->
     <script>
       function myFunction() {

@@ -1,3 +1,20 @@
+#unsure {
+
+  display: flex;
+  flex-direction : column;
+  min-height: 100vh;
+  color: #3b92c3;
+  background: rgb(40, 44, 44);
+  font-family: Alatsi, sans-serif;
+  width: 100%;
+}
+
+footer {
+
+  margin-top: auto;
+}
+
+/*www*/
 #bruh {
   float: left;
   padding-bottom: 10px;
@@ -21,4 +38,3 @@
   justify-content: center;
   width: 100px;
 }
-
