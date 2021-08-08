@@ -54,9 +54,7 @@ app.get("/:address", async (req, res) => {
   res.render("results", {
     location: data,
   });
-}).catch(err => {
-  console.error(err);
-});;
+});
    
 app.post("/:address/info", async (req, res) => {
   let data = req.body;
@@ -73,9 +71,7 @@ app.post("/:address/info", async (req, res) => {
       }
     }
   )
-}).catch(err => {
-  console.error(err);
-});;
+});
 
 
 server.listen(PORT, () => {

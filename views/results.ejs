@@ -223,9 +223,12 @@
         .then(response => response.json())
         .then(json => {
           console.log(json);
-        });
+        }).catch(err => {
+    console.error(err);
+  });
       window.location = window.location;
     }
+
     function noSubmit(addressURL) {
       console.log("no button was clicked")
       let timestamp = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
@@ -246,7 +249,9 @@
         .then(response => response.json())
         .then(json => {
           console.log(json);
-        });
+        }).catch(err => {
+    console.error(err);
+  });
       window.location = window.location;
     }
   </script>
