@@ -218,8 +218,8 @@
         body: JSON.stringify(data),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
-          'Access-Control-Allow-Origin: https://bajablastr.herokuapp.com/, 
-          Vary: Origin'
+          'Access-Control-Allow-Origin: https://bajablastr.herokuapp.com/':
+          'Vary: Origin',
         }
       })
         .then(response => response.json())
