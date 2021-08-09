@@ -7,9 +7,18 @@ const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
 
-//socket 
-const server = require("http").createServer(app);
-const io = require("socket.io")(server, {cors : {origin : '*'}});
+const server = require("http").createServer(function(req,res){
+	// Set CORS headers
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Request-Method', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+	res.setHeader('Access-Control-Allow-Headers', '*');
+	if ( req.method === 'OPTIONS' ) {
+		res.writeHead(200);
+		res.end();
+		return;
+	}
+});
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
