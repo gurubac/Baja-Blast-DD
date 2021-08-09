@@ -14,7 +14,8 @@
   #myUL {
     /* Remove default list styling */
     color: rgb(0,10,0);
-    display: inline;
+   /* display: inline; */
+   display: none;
     margin: 0 auto;
     list-style-type: none;
     padding: 0;

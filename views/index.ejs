@@ -16,8 +16,9 @@
   <link rel="stylesheet" href="../styles/Navbar---Logo-Middle---Phone-Logo-Middle.css" />
   <link rel="stylesheet" href="../styles/styles.css" />
   <!-- favicon -->
-  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">  
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
+
 <body style="
   display: flex;
   flex-direction : column;
@@ -81,9 +82,9 @@
       </div>
     </nav>
   </div>
-<!-- Search bar code to display each location in database with a forEach loop to loop through the response rendered from server by res.render (line 31). -->
-<div class = "center" style = "margin-top: 10px";>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter a location..." title="Type in a name">
+  <!-- Search bar code to display each location in database with a forEach loop to loop through the response rendered from server by res.render (line 31). -->
+  <div class="center" style="margin-top: 10px" ;>
+    <input type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..." title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
         <li>
@@ -91,7 +92,7 @@
             <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
           </a>
         </li>
-      <%})%>
+        <%})%>
     </ul>
   </div>
   <footer style="background: rgb(36, 36, 36); text-align: center; margin-top: auto; padding:10px ;">
@@ -99,36 +100,44 @@
       </span>and <span style="color:rgb(184, 105, 230)">Mahir</span></h4>
   </footer>
 
-    <!-- Search bar front end filter code -->
-    <script>
-      function myFunction() {
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByTagName("li");
-        
+  <!-- Search bar front end filter code -->
+  <script>
+    function searchAddress() {
+      //First, set visibility of the unordered list once user enter text 
+      //Then search for results :O 
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
 
+      //setting visibility first
+      if (ul.style.display === "none") {
+        ul.style.display = "inline";
+      } else {
+        ul.style.display = "inline";
+      }
+      //searching for items
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
 
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-        
-          //if text matches, show the matching item
-         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-          } else {
-            //if text does not match the item, do not show the item
-            li[i].style.display = "none";
-          }
+        //if text matches, show the matching item
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          //if text does not match the item, do not show the item
+          li[i].style.display = "none";
         }
       }
 
+    }
 
 
-    </script>
-    <!-- <script src="../assets/bootstrap/js/main.js"></script> -->
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+
+  </script>
+  <!-- <script src="../assets/bootstrap/js/main.js"></script> -->
+  <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
