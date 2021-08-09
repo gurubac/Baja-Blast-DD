@@ -7,18 +7,9 @@ const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
 
-const server = require("http").createServer(function(req,res){
-	// Set CORS headers
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Request-Method', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
-	res.setHeader('Access-Control-Allow-Headers', '*');
-	if ( req.method === 'OPTIONS' ) {
-		res.writeHead(200);
-		res.end();
-		return;
-	}
-});
+//socket 
+const server = require("http").createServer(app);
+const io = require("socket.io")(server, {cors : {origin : '*'}});
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
@@ -37,7 +28,7 @@ mongoose
     signale.error(err);
   });
 
-app.use(cors())
+// app.use(cors())
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
