@@ -203,8 +203,8 @@
 
     //changeable url
 
-    const baseURL = "https://bajablastr.herokuapp.com"
-    //const baseURL = "http://localhost:3000"
+    //const baseURL = "https://bajablastr.herokuapp.com"
+    const baseURL = "http://localhost:3000"
     function yesSubmit(addressURL) {
       console.log("yes button was clicked")
       let timestamp = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
@@ -220,8 +220,6 @@
         body: JSON.stringify(data),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
-          'Access-Control-Allow-Origin: https://bajablastr.herokuapp.com/':
-          'Vary: Origin',
         }
       })
         .then(response => response.json())
