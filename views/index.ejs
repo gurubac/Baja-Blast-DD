@@ -28,7 +28,10 @@
 
    #map {
       height: 100%;
-      background-color: grey;
+      width: 60%;
+      background-color: rgb(110, 110, 110);
+      margin : 0 auto;
+
     }
 
     #panel {
@@ -128,7 +131,8 @@
       </div>
     </nav>
   </div>
-  <!-- Search bar code to display each location in database with a forEach loop to loop through the response rendered from server by res.render (line 31). -->
+
+  <!-- search bar code -->
   <div class="center" style="margin-top: 10px" ;>
     <input type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..." title="Type in a name">
     <ul id="myUL">
