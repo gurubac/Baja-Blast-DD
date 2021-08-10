@@ -79,7 +79,7 @@
   <div id=" divtop" style="
         border-color: rgb(75, 166, 52);
         width: 100%;
-        height: 100%; /*margin-left: auto;*/ /*margin-right: auto;*/
+        height: 10%; 
         filter: saturate(150%);
       ">
     <nav class="navbar navbar-dark navbar-expand-lg" id="app-navbar" style="width: 100%; align-content: center">
@@ -133,15 +133,17 @@
   </div>
 
   <!-- search bar code -->
-  <div class="center" style="margin-top: 10px" ;>
-    <input type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..." title="Type in a name">
+  <div class="center" style="margin-top: 10px; margin-bottom: 10px" ;>
+    <input class = "corners"  type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..." title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
-        <li>
+        <li style="border-radius: 20px;border-width: 5px;border-style: solid;">
+          
           <a href="<%= `${location.address}` %> ">
             <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
           </a>
         </li>
+        
         <%})%>
     </ul>
   </div>
