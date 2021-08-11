@@ -28,7 +28,7 @@ mongoose
     signale.error(err);
   });
 
-app.use(cors({ origin: "https://bajablastr.herokuapp.com", credentials: true }))
+app.use(cors({ origin: "*", credentials: true }))
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
