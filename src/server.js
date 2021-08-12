@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const PORT = process.env.PORT;
+let PORT = process.env.PORT || 3000;
 const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
@@ -70,9 +70,6 @@ app.post("/:address/info", async (req, res) => {
 });
 
 
-app.listen(PORT || "3000", () => {
-  if (err) {
-    console.log(err);
-  }
-  signale.success(`Server running on port ${PORT}`);
+app.listen(PORT, () => {
+  signale.success(`Server running on http://localhost:${PORT}`);
 });
