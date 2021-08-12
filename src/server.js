@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/:address", async (req, res) => {
+app.get("/:address", cors(), async (req, res) => {
   let address = req.params.address;
   let data = await findUser(address);
 
@@ -52,7 +52,7 @@ app.get("/:address", async (req, res) => {
   });
 });
    
-app.post("/:address/info", async (req, res) => {
+app.post("/:address/info", cors(), async (req, res) => {
   let data = req.body;
   let address = req.params.address;
   
