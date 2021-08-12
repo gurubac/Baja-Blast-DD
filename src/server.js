@@ -24,7 +24,7 @@ mongoose
     signale.error(err);
   });
 
-app.use(cors())
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -69,6 +69,7 @@ app.post("/:address/info", cors(), async (req, res) => {
   )
 });
 
+app.use(cors())
 
 app.listen(PORT, () => {
   signale.success(`Server running on http://localhost:${PORT}`);
