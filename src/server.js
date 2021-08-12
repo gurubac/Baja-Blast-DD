@@ -7,10 +7,6 @@ const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
 
-//socket 
-const server = require("http").createServer(app);
-const io = require("socket.io")(server, {cors : {origin : '*'}});
-
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
 
@@ -74,6 +70,9 @@ app.post("/:address/info", async (req, res) => {
 });
 
 
-server.listen(PORT, () => {
+app.listen(PORT || "3000", () => {
+  if (err) {
+    console.log(err);
+  }
   signale.success(`Server running on port ${PORT}`);
 });
