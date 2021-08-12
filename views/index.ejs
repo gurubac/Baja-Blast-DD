@@ -137,7 +137,7 @@
     <input class = "corners"  type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..." title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
-        <li style="border-radius: 20px;border-width: 5px;border-style: solid;">
+        <li>
           
           <a href="<%= `${location.address}` %> ">
             <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
