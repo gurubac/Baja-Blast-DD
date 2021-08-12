@@ -24,7 +24,7 @@ mongoose
     signale.error(err);
   });
 
-
+app.use(cors())
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -34,7 +34,7 @@ async function findUser(address) {
   return Location.findOne({ address: address });
 }
 
-app.get("/", (req, res) => {
+app.get("/", cors(), (req, res) => {
   Location.find({}, function (err, locations) {
     //console.log(location);
     res.render("index", {
@@ -69,7 +69,6 @@ app.post("/:address/info", cors(), async (req, res) => {
   )
 });
 
-app.use(cors())
 
 app.listen(PORT, () => {
   signale.success(`Server running on http://localhost:${PORT}`);
