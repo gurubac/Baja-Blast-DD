@@ -226,9 +226,10 @@
           console.log(json);
         })
         .catch((err) => {
+          window.location = window.location;
           console.log(err);
         })
-        window.location = window.location;
+
     };
 
     function noSubmit(addressURL) {
@@ -241,12 +242,8 @@
       };
       fetch(`${baseURL}/${addressURL}/info`, {
         method: 'POST',
-        mode: 'cors',
         body: JSON.stringify(data),
         headers: {
-          'Access-Control-Request-Origin': '*',
-          'Access-Control-Allow-Origin': '*',
-          "Access-Control-Allow-Headers": "access-control-allow-headers,access-control-allow-origin,content-type",
           'Content-Type': 'application/json'
         }
       })
@@ -255,9 +252,9 @@
           console.log(json);
         })
         .catch((err) => {
+          window.location = window.location;
           console.log(err);
         })
-          window.location = window.location;
     };
   </script>
 </body>
