@@ -24,10 +24,10 @@ mongoose
     signale.error(err);
   });
 
-var corsOptions = {
-  origin: 'https://bajablastr.herokuapp.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+// var corsOptions = {
+//   origin: 'https://bajablastr.herokuapp.com',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
   
 app.use(cors())
 app.use(express.static("public"));
@@ -39,7 +39,7 @@ async function findUser(address) {
   return Location.findOne({ address: address });
 }
 
-app.get("/", cors(corsOptions), (req, res) => {
+app.get("/", cors(), (req, res) => {
   Location.find({}, function (err, locations) {
     //console.log(location);
     res.render("index", {
@@ -48,7 +48,7 @@ app.get("/", cors(corsOptions), (req, res) => {
   });
 });
 
-app.get("/:address", cors(corsOptions), async (req, res) => {
+app.get("/:address", cors(), async (req, res) => {
   let address = req.params.address;
   let data = await findUser(address);
 
@@ -57,7 +57,7 @@ app.get("/:address", cors(corsOptions), async (req, res) => {
   });
 });
    
-app.post("/:address/info", cors(corsOptions), async (req, res) => {
+app.post("/:address/info", cors(), async (req, res) => {
   let data = req.body;
   let address = req.params.address;
   
