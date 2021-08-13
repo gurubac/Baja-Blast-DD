@@ -72,6 +72,8 @@ app.post("/:address/info", cors(corsOptions), async (req, res) => {
       }
     }
   )
+
+  res.sendStatus(200);
 });
 
 
