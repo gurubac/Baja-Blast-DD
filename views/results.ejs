@@ -219,13 +219,12 @@
       })
         .then(response => response.json())
         .then(json => {
-          console.log(json);
+          console.log(json)
           window.location = window.location;
         })
         .catch((err) => {
           console.log(err);
-        })
-
+        });
     };
 
     async function noSubmit(addressURL) {
@@ -245,12 +244,12 @@
       })
         .then(response => response.json())
         .then(json => {
-          console.log(json);
+          console.log(json)
           window.location = window.location;
         })
         .catch((err) => {
           console.log(err);
-        })
+        });
     };
   </script>
 </body>
