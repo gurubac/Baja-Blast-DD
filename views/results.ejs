@@ -109,7 +109,7 @@
             <tr style="height: 50%">
               <td style="border-width: 0px; height: 80px">
                 <% let addressURL=location.address %>
-                  <button class="btn btn-primary, btn" type="button" id="yesButton" onclick="yesSubmit('<%= addressURL %>');"
+                  <button data-type="working" class="btn btn-primary, btn" type="button" id="yesButton" onclick="yesSubmit('<%= addressURL %>');"
                     style="
                       width: 61%;
                       background: rgb(3, 252, 148);
@@ -130,7 +130,7 @@
             </tr>
             <tr>
               <td style="border-width: 0px; height: 80px">
-                <button class="btn btn-primary, btn" type="button" id="noSubmit" onclick="noSubmit('<%= addressURL %>');"
+                <button data-type="not working" class="btn btn-primary, btn" type="button" id="noSubmit" onclick="noSubmit('<%= addressURL %>');"
                   style="
                       height: 100%;
                       width: 61%;
@@ -254,6 +254,80 @@
           console.log(err);
         });
     }
+  </script>
+
+  <!-- animation -->
+
+  <script>
+    	function pop (e) {
+  let amount = 25;
+  switch (e.target.dataset.type) {
+    case 'shadow':
+    case 'line':
+      amount = 1;
+      break;
+  }
+  // Quick check if user clicked the button using a keyboard
+  if (e.clientX === 0 && e.clientY === 0) {
+    const bbox = e.target.getBoundingClientRect();
+    const x = bbox.left + bbox.width / 2;
+    const y = bbox.top + bbox.height / 2;
+    for (let i = 0; i < 30; i++) {
+      // We call the function createParticle 30 times
+      // We pass the coordinates of the button for x & y values
+      createParticle(x, y, e.target.dataset.type);
+    }
+  } else {
+    for (let i = 0; i < amount; i++) {
+      createParticle(e.clientX, e.clientY + window.scrollY, e.target.dataset.type);
+    }
+  }
+}
+
+function createParticle (x, y, type) {
+  const particle = document.createElement('particle');
+  document.body.appendChild(particle);
+  let width = Math.floor(Math.random() * 30 + 8);
+  let height = width;
+  let destinationX = (Math.random() - 0.5) * 300;
+  let destinationY = (Math.random() - 0.5) * 300;
+  let rotation = Math.random() * 1;
+  let delay = Math.random() * 200;
+  
+  switch (type) {
+    case 'working':
+      particle.style.backgroundImage = 'url(https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Up_Sign_Emoji_Icon_ios10_large.png?v=1571606114)';
+      break;
+    case 'not working':
+      particle.style.backgroundImage = 'url(https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/crying-face_1f622.png)';
+      break;
+  }
+  
+  particle.style.width = `${width*2}px` ;
+  particle.style.height = `${height*2}px`;
+  const animation = particle.animate([
+    {
+      transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(0deg)`,
+      opacity: 1
+    },
+    {
+      transform: `translate(-50%, -50%) translate(${x + destinationX}px, ${y + destinationY}px) rotate(${rotation}deg)`,
+      opacity: 0
+    }
+  ], {
+    duration: Math.random() * 1000 + 5000,
+    easing: 'cubic-bezier(0, .9, .57, 1)',
+    delay: delay
+  });
+  animation.onfinish = removeParticle;
+}
+function removeParticle (e) {
+  e.srcElement.effect.target.remove();
+}
+
+if (document.body.animate) {
+  document.querySelectorAll('button').forEach(button => button.addEventListener('click', pop));
+}
   </script>
 </body>
 
