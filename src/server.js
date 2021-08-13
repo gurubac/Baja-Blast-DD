@@ -75,5 +75,3 @@ app.post("/:address/info", cors(), async (req, res) => {
 app.listen(PORT, () => {
   signale.success(`Server running on http://localhost:${PORT}`);
 });
-//mahir
-//mahir2
