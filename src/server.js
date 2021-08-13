@@ -23,11 +23,6 @@ mongoose
   .catch((err) => {
     signale.error(err);
   });
-
-// var corsOptions = {
-//   origin: 'https://bajablastr.herokuapp.com',
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// }
   
 app.use(cors())
 app.use(express.static("public"));
