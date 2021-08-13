@@ -34,4 +34,5 @@ RECENT RESULTS
 
 Footer/Header
 - use ejs partials for the footer and header 
+-  footer - underline our names for clickable links
 
