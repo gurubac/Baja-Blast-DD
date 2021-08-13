@@ -2,9 +2,6 @@
 SEARCHBAR
 - rounded edges (priority: low)
 
-BUTTONS 
-- add some feedback/movement/effects to the buttons to make the presses noticeable
-
 LINKS
 - instead of faq add a suggestions/comments/feedback contact form page
 
@@ -28,9 +25,6 @@ MAP PANEL
 
 ADS
 - perhaps
-
-RECENT RESULTS 
-- increase size of the words "recent results"
 
 Footer/Header
 - use ejs partials for the footer and header 

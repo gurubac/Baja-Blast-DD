@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <title>Baja Blast Down Detector</title>
-  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type = "text/css" href="../assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap" />
-  <link rel="stylesheet" href="../assets/css/styles.css" />
-  <link rel="stylesheet" href="../styles/dropdown.css" />
-  <link rel="stylesheet" href="../styles/gradient-navbar-1.css" />
-  <link rel="stylesheet" href="../styles/gradient-navbar.css" />
-  <link rel="stylesheet" href="../styles/Navbar---Logo-Middle---Phone-Logo-Middle.css" />
-  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" type = "text/css" href="../assets/css/styles.css" />
+  <link rel="stylesheet" type = "text/css" href="../styles/dropdown.css" />
+  <link rel="stylesheet" type = "text/css" href="../styles/gradient-navbar.css" />
+  <link rel="stylesheet" type = "text/css" href="../styles/Navbar---Logo-Middle---Phone-Logo-Middle.css" />
+  <link rel="stylesheet" type = "text/css" href="../styles/styles.css" />
   <!-- favicon -->
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
+
 <style>
   html,
   body {
@@ -127,8 +127,8 @@
               <a class="nav-link" href="#" style="color: rgb(0, 0, 0)">Contact</a>
             </li>
           </ul>
+          
         </div>
-        <div></div>
       </div>
     </nav>
   </div>
@@ -154,50 +154,13 @@
   <!-- Map appears here -->
   <div id="map"></div>
 
-  <footer style="background: rgb(36, 36, 36); text-align: center; margin-top: auto; padding:10px ;">
-    <h4 style="color:rgb(202, 202, 202); ">Baja Blast DD - Made by <a
-        style="text-decoration: underline; text-decoration-color:rgb(91, 243, 159);" href="https://github.com/gurubac"
-        target="_blank" rel="noopener noreferrer"><span style="color:rgb(91, 243, 159);">Guru</span></a> and <a style="text-decoration: underline;  text-decoration-color:rgb(184, 105, 230);"
-        href="https://github.com/jmahir408" target="_blank" rel="noopener noreferrer"><span
-          style="color:rgb(184, 105, 230)">Mahir</span></a></h4>
-  </footer>
+  <%- include('partials/footer') %>
 
   <!-- Search bar front end filter code -->
-  <script>
-    function searchAddress() {
-      //First, set visibility of the unordered list once user enter text 
-      //Then search for results :O 
-      var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myUL");
-      li = ul.getElementsByTagName("li");
-      //setting visibility first
 
-      if (ul.style.display === "none") {
-        ul.style.display = "inline";
-      } else if (input.value.length == 0) {
-        ul.style.display = "none"
-      } else {
-        ul.style.display = "inline";
-      }
-      //searching for items
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        //if text matches, show the matching item
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-        } else {
-          //if text does not match the item, do not show the item
-          li[i].style.display = "none";
-        }
-      }
-    }
-  </script>
   <script type="text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="../scripts/map.js"></script>
-
+ <script src = "../scripts/search.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRux7Rt1Vq6rO-zjtfQ7zYxUQabz3suOY&libraries=places&callback=initMap">
     </script>
