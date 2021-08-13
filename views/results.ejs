@@ -220,9 +220,9 @@
         .then(response => response.json())
         .then(json => {
           console.log(json);
+          window.location = window.location;
         })
         .catch((err) => {
-          window.location = window.location;
           console.log(err);
         })
 
@@ -246,9 +246,9 @@
         .then(response => response.json())
         .then(json => {
           console.log(json);
+          window.location = window.location;
         })
         .catch((err) => {
-          window.location = window.location;
           console.log(err);
         })
     };
