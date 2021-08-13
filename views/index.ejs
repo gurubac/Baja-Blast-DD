@@ -20,54 +20,54 @@
 </head>
 <style>
   html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-   #map {
-      height: 100%;
-      width: 60%;
-      background-color: rgb(110, 110, 110);
-      margin : 0 auto;
+  #map {
+    height: 100%;
+    width: 60%;
+    background-color: rgb(110, 110, 110);
+    margin: 0 auto;
 
-    }
+  }
 
-    #panel {
-      height: 100%;
-      width: null;
-      background-color: white;
-      position: fixed;
-      z-index: 1;
-      overflow-x: hidden;
-      transition: all .2s ease-out;
-    }
+  #panel {
+    height: 100%;
+    width: null;
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: all .2s ease-out;
+  }
 
-    .open {
-      width: 250px;
-    }
+  .open {
+    width: 250px;
+  }
 
-    /* Styling for place details */
-    .hero {
-      width: 100%;
-      height: auto;
-      max-height: 166px;
-      display: block;
-    }
+  /* Styling for place details */
+  .hero {
+    width: 100%;
+    height: auto;
+    max-height: 166px;
+    display: block;
+  }
 
-    .place,
-    p {
-      font-family: 'open sans', arial, sans-serif;
-      padding-left: 18px;
-      padding-right: 18px;
-    }
+  .place,
+  p {
+    font-family: 'open sans', arial, sans-serif;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 
-    .details {
-      color: darkslategrey;
-    }
-
+  .details {
+    color: darkslategrey;
+  }
 </style>
+
 <body style="
   display: flex;
   flex-direction : column;
@@ -120,7 +120,8 @@
               <a class="nav-link active" href="#" style="color: rgb(0, 0, 0)">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/gurubac/bajablastr" style="color: rgb(0, 0, 0)" target = "_blank" rel="noopener noreferrer">Github</a>
+              <a class="nav-link" href="https://github.com/gurubac/bajablastr" style="color: rgb(0, 0, 0)"
+                target="_blank" rel="noopener noreferrer">Github</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" style="color: rgb(0, 0, 0)">Contact</a>
@@ -134,16 +135,17 @@
 
   <!-- search bar code -->
   <div class="center" style="margin-top: 10px; margin-bottom: 10px" ;>
-    <input class = "corners"  type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..." title="Type in a name">
+    <input class="corners" type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..."
+      title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
         <li>
-          
+
           <a href="<%= `${location.address}` %> ">
             <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
           </a>
         </li>
-        
+
         <%})%>
     </ul>
   </div>
@@ -153,8 +155,11 @@
   <div id="map"></div>
 
   <footer style="background: rgb(36, 36, 36); text-align: center; margin-top: auto; padding:10px ;">
-    <h4 style="color:rgb(202, 202, 202); ">Baja Blast DD - Made by<a style = "text-decoration: none;" href = "https://github.com/gurubac" target="_blank" rel="noopener noreferrer"><span style="color:rgb(91, 243, 159);"> Guru
-      </span></a>and <a style = "text-decoration: none;" href = "https://github.com/jmahir408" target="_blank" rel="noopener noreferrer"><span style="color:rgb(184, 105, 230)">Mahir</span></a></h4>
+    <h4 style="color:rgb(202, 202, 202); ">Baja Blast DD - Made by <a
+        style="text-decoration: underline; text-decoration-color:rgb(91, 243, 159);" href="https://github.com/gurubac"
+        target="_blank" rel="noopener noreferrer"><span style="color:rgb(91, 243, 159);">Guru</span></a> and <a style="text-decoration: underline;  text-decoration-color:rgb(184, 105, 230);"
+        href="https://github.com/jmahir408" target="_blank" rel="noopener noreferrer"><span
+          style="color:rgb(184, 105, 230)">Mahir</span></a></h4>
   </footer>
 
   <!-- Search bar front end filter code -->
@@ -171,7 +176,7 @@
 
       if (ul.style.display === "none") {
         ul.style.display = "inline";
-      } else if(input.value.length == 0){
+      } else if (input.value.length == 0) {
         ul.style.display = "none"
       } else {
         ul.style.display = "inline";
@@ -190,12 +195,12 @@
       }
     }
   </script>
-  <script type = "text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src = "../scripts/map.js"></script>
+  <script type="text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../scripts/map.js"></script>
 
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRux7Rt1Vq6rO-zjtfQ7zYxUQabz3suOY&libraries=places&callback=initMap">
-</script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRux7Rt1Vq6rO-zjtfQ7zYxUQabz3suOY&libraries=places&callback=initMap">
+    </script>
 </body>
 
 </html>
