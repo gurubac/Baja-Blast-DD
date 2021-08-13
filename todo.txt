@@ -1,42 +1,37 @@
-URLS
-- find efficient way to make url routes for sites (priority : not high)
 
 SEARCHBAR
-- make it only show results when typing something in, instead of having it always showing
-- make searchbar style look nicer
+- rounded edges (priority: low)
 
 BUTTONS 
-- add button redirect to home page
 - add some feedback/movement/effects to the buttons to make the presses noticeable
 
 LINKS
-- make links work for other stuff, create routes for about us
 - instead of faq add a suggestions/comments/feedback contact form page
 
 PAGES
-- make pages for about us and faq, as well as styles, routes, etc.
-
-IMAGES
-- add some images of baja blast freeze
-
-SITE 
-- fix scaling for all devices and sizes of screens
-- make the results page borders around our "is the machine working", and "recent results" extended downwards
-
-LOCATIONS
-- add more, add routes for them, find a better way to add routes, refactor code so its easily reusable for other locations
-- http://localhost:3000/api/info SHOULD BE CHANGED TO http://localhost:3000/${insert_location_here_with_spaces/info}
+- make a contact form.
 
 GITHUB README 
 - update it with more info
-
-Comments/Voting system type thing
-- work on front end style (priority : low)
 
 TIMESTAMPS 
 - once they are in the database, they are stuck to the timezone they were created in which would lead to people in different time zones seeing the previously created TIMESTAMPS
 - this issue is a bit trivial to be honest, because people in different timezones have no need to see the status of the machine in a different time zone, but it would be nice to fix
 - (priority : super low)
 
-ROUTES 
-- for loop through the database and add routes for all locations
+NAVBAR
+- Make dropdown work on results page (probably some script source needed to be fixed)
+- Look nicer on mobile/fitting
+
+MAP PANEL
+- fix scaling and sizing
+
+ADS
+- perhaps
+
+RECENT RESULTS 
+- increase size of the words "recent results"
+
+Footer/Header
+- use ejs partials for the footer and header 
+
