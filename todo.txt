@@ -6,7 +6,7 @@ LINKS
 - instead of faq add a suggestions/comments/feedback contact form page
 
 PAGES
-- make a contact form.
+- make a contact form page (user add location request, any feedback/suggestions)
 
 GITHUB README 
 - update it with more info
@@ -21,10 +21,7 @@ NAVBAR
 
 MAP PANEL
 - fix scaling and sizing
+- header overlaps searchbar at small resolutios, and this probably ties in with the style tag on line 22 where height is 100 percent for the whole body. 
 
 ADS
 - perhaps
-
-Footer/Header
-- use ejs partials for header 
-
