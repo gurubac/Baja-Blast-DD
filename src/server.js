@@ -49,7 +49,7 @@ app.get("/:address", cors(), async (req, res) => {
 
   res.render("results", {
     location: data,
-  });
+  })
 });
    
 app.post("/:address/info", cors(), async (req, res) => {
