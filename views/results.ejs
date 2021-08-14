@@ -24,61 +24,7 @@
   background: rgb(40, 44, 44);
   font-family: Alatsi, sans-serif;
   width: 100%; ">
-  <div id=" divtop" style="
-        border-color: rgb(75, 166, 52);
-        width: 100%;
-        height: 100%; 
-        filter: saturate(150%);
-      ">
-    <nav class="navbar navbar-dark navbar-expand-lg" id="app-navbar" style="width: 100%; align-content: center">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="padding-top: 5px; margin-right: 26px"><img src="../img/bajablast.png"
-            style="
-                width: 60px;
-                padding-right: 0px;
-                margin-bottom: 0px;
-                margin-right: 0px;
-                margin-left: 12px;
-              " /></a>
-              
-        <div>
-          <a href = "/" style = "text-decoration: none;">
-          <h1 style="font-size: 227%; color: rgb(0, 0, 0); margin-left: 4px">
-            Baja Blast
-          </h1>
-          <h1 style="
-                font-size: 122%;
-                text-align: center;
-                color: rgb(0, 0, 0);
-                margin-left: 4px;
-              ">
-            Down Detector
-          </h1>
-        </a>
-        </div>
-        <img src="../img/bell.png" style="width: 59px; transform: translate(6px); margin-right: 1%" />
-        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="
-              filter: brightness(200%) invert(100%) saturate(100%);
-              border: 2px solid rgb(60, 113, 42);
-              margin-right: -10px;
-              margin-left: 4px;
-            ">
-          <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navcol-1">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/gurubac/bajablastr" style="color: rgb(0, 0, 0)" target = "_blank" rel="noopener noreferrer">Github</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: rgb(0, 0, 0)">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-
+ <%- include('partials/header') %>
   <div>
     <div style="width: 100%; height: 100%;">
       <h1 style="
@@ -193,6 +139,7 @@
   <%- include('partials/footer') %>
   <!-- scripts -->
   <script type = "text/js" src="/socket.io/socket.io.js"></script>
+  <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script> 
   <script type = "text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
   

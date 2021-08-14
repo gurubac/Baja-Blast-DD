@@ -1,14 +1,10 @@
 .center{
     text-align: center;
     align-items: center;
+    padding-top: calc(innerHeight - 500);
 }
 .corners{
     border-radius: 25px;
-    border: 2px solid #ffffff;
+    border: 1px solid #000000;
+    background-color:rgb(138, 137, 137);
 }
-.licorners{
-    
-}
-
-
-

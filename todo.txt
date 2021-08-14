@@ -17,7 +17,6 @@ TIMESTAMPS
 - (priority : super low)
 
 NAVBAR
-- Make dropdown work on results page (probably some script source needed to be fixed)
 - Look nicer on mobile/fitting
 
 MAP PANEL
@@ -27,6 +26,5 @@ ADS
 - perhaps
 
 Footer/Header
-- use ejs partials for the footer and header 
--  footer - underline our names for clickable links
+- use ejs partials for header 
 

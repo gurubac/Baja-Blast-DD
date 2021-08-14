@@ -76,7 +76,7 @@
   background: rgb(40, 44, 44);
   font-family: Alatsi, sans-serif;
   width: 100%; ">
-  <div id=" divtop" style="
+ <div id=" divtop" style="
         border-color: rgb(75, 166, 52);
         width: 100%;
         height: 10%; 
@@ -117,9 +117,6 @@
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#" style="color: rgb(0, 0, 0)">About Us</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="https://github.com/gurubac/bajablastr" style="color: rgb(0, 0, 0)"
                 target="_blank" rel="noopener noreferrer">Github</a>
             </li>
@@ -134,13 +131,12 @@
   </div>
 
   <!-- search bar code -->
-  <div class="center" style="margin-top: 10px; margin-bottom: 10px" ;>
+  <div class="center" style="margin-bottom: 10px;">
     <input class="corners" type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..."
       title="Type in a name">
     <ul id="myUL">
       <%locationList.forEach(location=> {%>
         <li>
-
           <a href="<%= `${location.address}` %> ">
             <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
           </a>
@@ -149,6 +145,8 @@
         <%})%>
     </ul>
   </div>
+
+
   <div id="panel"></div>
 
   <!-- Map appears here -->
@@ -161,6 +159,7 @@
   <script type="text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="../scripts/map.js"></script>
  <script src = "../scripts/search.js"></script>
+ <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRux7Rt1Vq6rO-zjtfQ7zYxUQabz3suOY&libraries=places&callback=initMap">
     </script>
