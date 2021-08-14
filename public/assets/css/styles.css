@@ -13,3 +13,8 @@
     margin-top: 17px;
     
 }
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+  }

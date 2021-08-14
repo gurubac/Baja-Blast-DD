@@ -8,7 +8,7 @@
     padding: 12px 20px 12px 40px; /* Add some padding */
     /* border: 1px solid #ddd; Add a grey border */
     margin-bottom: 0px; /* Add some space below the input */
-    color: rgb(255, 255, 255);
+    color: #ffffff;
   }
   #myInput:focus {
     outline: none !important;
