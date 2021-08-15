@@ -8,7 +8,6 @@ const Location = require("../models/Location");
 const cors = require('cors')
 const nodemailer = require("nodemailer");
 const moment = require("moment");
-import {v4 as uuidv4} from 'uuid';
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
@@ -22,10 +21,6 @@ const REAL_EMAIL = process.env.REAL_EMAIL;
 
 //set timestamp for subject of email
 // let TIMESTAMP = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
-
-//set uuid for subject of email
-let UUID = uuidv4();
-
 
 mongoose
   .connect(mongoURL, {
@@ -67,16 +62,17 @@ app.post("/contact", cors(), function(request, response) {
 		}
 	});
 
+  var CLIENT_EMAIL = request.body.email;
 	var textBody = `FROM: ${request.body.name} EMAIL: ${request.body.email} MESSAGE: ${request.body.message}`;
 	var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} <a href="mailto:${request.body.email}">${request.body.email}</a></p><p>${request.body.message}</p>`;
 	var mail = {
 		from: EMAIL, // sender address
 		to: REAL_EMAIL, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
-		subject: UUID, // Subject line
+		subject: `New message from: ${CLIENT_EMAIL}`, // Subject line
 		text: textBody,
 		html: htmlBody
 	};
-
+``
 	// send mail with defined transport object
 	transporter.sendMail(mail, function (err, info) {
 		if(err) {
