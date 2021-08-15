@@ -42,43 +42,6 @@ async function findUser(address) {
   return Location.findOne({ address: address });
 }
 
-app.get("/", cors(), (req, res) => {
-  Location.find({}, function (err, locations) {
-    //console.log(location);
-    res.render("index", {
-      locationList: locations,
-    });
-  });
-});
-
-app.get("/:address", cors(), async (req, res) => {
-  let address = req.params.address;
-  let data = await findUser(address);
-
-  res.render("results", {
-    location: data,
-  })
-});
-   
-app.post("/:address/info", cors(), async (req, res) => {
-  let data = req.body;
-  let address = req.params.address;
-  
-  await Location.findOneAndUpdate(
-    { address: address },
-    {
-      $push: {
-        comment: [
-          {status: data.status,
-          timestamp: data.timestamp}
-        ]
-      }
-    }
-  )
-
-  res.status(200).send({ status: 'OK'});
-});
-
 app.get("/contact", cors(), async (req, res) => {
   res.render("contact")
 });
@@ -117,6 +80,42 @@ app.post("/contact", cors(), function(request, response) {
 	});
 });
 
+app.get("/", cors(), (req, res) => {
+  Location.find({}, function (err, locations) {
+    //console.log(location);
+    res.render("index", {
+      locationList: locations,
+    });
+  });
+});
+
+app.get("/:address", cors(), async (req, res) => {
+  let address = req.params.address;
+  let data = await findUser(address);
+
+  res.render("results", {
+    location: data,
+  })
+});
+   
+app.post("/:address/info", cors(), async (req, res) => {
+  let data = req.body;
+  let address = req.params.address;
+  
+  await Location.findOneAndUpdate(
+    { address: address },
+    {
+      $push: {
+        comment: [
+          {status: data.status,
+          timestamp: data.timestamp}
+        ]
+      }
+    }
+  )
+
+  res.status(200).send({ status: 'OK'});
+});
 
 app.listen(PORT, () => {
   signale.success(`Server running on http://localhost:${PORT}`);
