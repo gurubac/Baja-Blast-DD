@@ -10,6 +10,13 @@ const cors = require('cors')
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
 
+//get dummy email auth credentials
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
+
+//get real email address
+const REAL_EMAIL = process.env.REAL_EMAIL;
+
 mongoose
   .connect(mongoURL, {
     useNewUrlParser: true,
@@ -69,6 +76,44 @@ app.post("/:address/info", cors(), async (req, res) => {
   )
 
   res.status(200).send({ status: 'OK'});
+});
+
+app.get("/contact", cors(), async (req, res) => {
+  res.render("contact")
+});
+
+app.post("/contact", cors(), function(request, response) {
+  // create reusable transporter object using the default SMTP transport
+	const transporter = nodemailer.createTransport({
+		host: "smtp.gmail.com",
+		port: 465,
+		secure: true,
+		auth: {
+			user: EMAIL, // this should be YOUR GMAIL account
+			pass: PASSWORD // this should be your password
+		}
+	});
+
+	var textBody = `FROM: ${request.body.name} EMAIL: ${request.body.email} MESSAGE: ${request.body.message}`;
+	var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} <a href="mailto:${request.body.email}">${request.body.email}</a></p><p>${request.body.message}</p>`;
+	var mail = {
+		from: EMAIL, // sender address
+		to: REAL_EMAIL, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
+		subject: "Mail From Contact Form", // Subject line
+		text: textBody,
+		html: htmlBody
+	};
+
+	// send mail with defined transport object
+	transporter.sendMail(mail, function (err, info) {
+		if(err) {
+			console.log(err);
+			response.json({ message: "message not sent: an error occured; check the server's console log" });
+		}
+		else {
+			response.json({ message: `message sent: ${info.messageId}` });
+		}
+	});
 });
 
 
