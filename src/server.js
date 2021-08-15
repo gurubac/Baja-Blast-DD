@@ -6,6 +6,7 @@ let PORT = process.env.PORT || 3000;
 const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
+const nodemailer = require("nodemailer");
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
