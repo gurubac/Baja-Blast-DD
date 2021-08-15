@@ -25,15 +25,12 @@
     margin: 0;
     padding: 0;
   }
-
   #map {
     height: 100%;
     width: 60%;
     background-color: rgb(110, 110, 110);
     margin: 0 auto;
-
   }
-
   #panel {
     height: 100%;
     width: null;
@@ -43,11 +40,9 @@
     overflow-x: hidden;
     transition: all .2s ease-out;
   }
-
   .open {
     width: 250px;
   }
-
   /* Styling for place details */
   .hero {
     width: 100%;
@@ -55,14 +50,12 @@
     max-height: 166px;
     display: block;
   }
-
   .place,
   p {
     font-family: 'open sans', arial, sans-serif;
     padding-left: 18px;
     padding-right: 18px;
   }
-
   .details {
     color: darkslategrey;
   }
@@ -121,7 +114,7 @@
                 target="_blank" rel="noopener noreferrer">Github</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact" style="color: rgb(0, 0, 0)">Contact</a>
+              <a class="nav-link" href="#" style="color: rgb(0, 0, 0)">Contact</a>
             </li>
           </ul>
           
@@ -142,7 +135,6 @@
             <%= `${location.address}, ${location.city} ${location.state} ${location.zip}` %>
           </a>
         </li>
-
         <%})%>
     </ul>
   </div>

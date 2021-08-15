@@ -33,15 +33,6 @@ app.use(express.json());
 async function findUser(address) {
   return Location.findOne({ address: address });
 }
-app.get("/contact", cors(), async (req, res) => {
-  res.render("form")
-});
-
-app.post("/mailphp/contact.php", cors(), async (req, res) => {
-
-});
-
-
 
 app.get("/", cors(), (req, res) => {
   Location.find({}, function (err, locations) {
@@ -61,7 +52,6 @@ app.get("/:address", cors(), async (req, res) => {
   })
 });
    
-
 app.post("/:address/info", cors(), async (req, res) => {
   let data = req.body;
   let address = req.params.address;
