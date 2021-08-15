@@ -8,6 +8,7 @@ const Location = require("../models/Location");
 const cors = require('cors')
 const nodemailer = require("nodemailer");
 const moment = require("moment");
+import {v4 as uuidv4} from 'uuid';
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
@@ -20,7 +21,11 @@ const PASSWORD = process.env.PASSWORD;
 const REAL_EMAIL = process.env.REAL_EMAIL;
 
 //set timestamp for subject of email
-let TIMESTAMP = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
+// let TIMESTAMP = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
+
+//set uuid for subject of email
+let UUID = uuidv4();
+
 
 mongoose
   .connect(mongoURL, {
@@ -67,7 +72,7 @@ app.post("/contact", cors(), function(request, response) {
 	var mail = {
 		from: EMAIL, // sender address
 		to: REAL_EMAIL, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
-		subject: TIMESTAMP, // Subject line
+		subject: UUID, // Subject line
 		text: textBody,
 		html: htmlBody
 	};
