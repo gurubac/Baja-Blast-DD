@@ -7,7 +7,6 @@ const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
 const nodemailer = require("nodemailer");
-const moment = require("moment");
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
@@ -18,9 +17,6 @@ const PASSWORD = process.env.PASSWORD;
 
 //get real email address
 const REAL_EMAIL = process.env.REAL_EMAIL;
-
-//set timestamp for subject of email
-// let TIMESTAMP = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
 
 mongoose
   .connect(mongoURL, {
@@ -64,7 +60,10 @@ app.post("/contact", cors(), function(request, response) {
 
   var CLIENT_EMAIL = request.body.email;
 	var textBody = `FROM: ${request.body.name} EMAIL: ${request.body.email} MESSAGE: ${request.body.message}`;
-	var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} <a href="mailto:${request.body.email}">${request.body.email}</a></p><p>${request.body.message}</p>`;
+	var htmlBody = `<h2>Mail From Contact Form</h2>
+                  <h4>Name: ${request.body.name}</h4> 
+                  <h4>Email: <a href="mailto:${request.body.email}">${request.body.email}</a></h4>
+                  <p>${request.body.message}</p>`;
 	var mail = {
 		from: EMAIL, // sender address
 		to: REAL_EMAIL, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
