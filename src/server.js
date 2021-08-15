@@ -7,6 +7,7 @@ const signale = require("signale");
 const Location = require("../models/Location");
 const cors = require('cors')
 const nodemailer = require("nodemailer");
+const moment = require("moment");
 
 //connect to mongodb
 const mongoURL = process.env.MONGO_URL;
@@ -17,6 +18,9 @@ const PASSWORD = process.env.PASSWORD;
 
 //get real email address
 const REAL_EMAIL = process.env.REAL_EMAIL;
+
+//set timestamp for subject of email
+let TIMESTAMP = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");
 
 mongoose
   .connect(mongoURL, {
@@ -63,7 +67,7 @@ app.post("/contact", cors(), function(request, response) {
 	var mail = {
 		from: EMAIL, // sender address
 		to: REAL_EMAIL, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
-		subject: "Mail From Contact Form", // Subject line
+		subject: TIMESTAMP, // Subject line
 		text: textBody,
 		html: htmlBody
 	};
