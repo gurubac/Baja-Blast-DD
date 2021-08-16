@@ -12,7 +12,7 @@
 		body {
 			font-family: sans-serif;
 			font-size: 16px;
-			background-color: #fff;
+			background-color: rgb(75, 166, 52);
 		}
 		h1 {
 			font-variant: small-caps;
@@ -26,7 +26,7 @@
 			right: 0;
 			bottom: 0;
 			transition: .5s;
-			background-color: #fff;
+			background-color: rgb(75, 166, 52);
 		}
 		.contact section {
 			text-align: right;
@@ -114,10 +114,7 @@
 	</script>
 </head>
 <body>
-	<h1>Home Page</h1>
-	<p><a href="#contact-id">click here for the contact form</a></p>
 	<div class="contact" id="contact-id">
-		<section><a href="#!">[ close ]</a></section>
 		<form action="/contact" class="contact-form" method="POST" onsubmit="return submitEmailForm(this);">
 			<div>
 				<input type="text" name="name" placeholder="name" class="contact-form-input" required />
@@ -133,5 +130,6 @@
 			</div>
 		</form>
 	</div>
+	<a href = "/">Back to Home</a>
 </body>
 </html>
