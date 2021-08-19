@@ -1,10 +1,9 @@
 # Bajablast.live
 ## A user report based down detector for Taco Bell's Baja Blast Freeze.
 <p>
-  <img src="todo" />
-    <img src="later" />
+  <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/HomepageScreenshot.png" />
+    <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/ResultsScreenshot.png" />
 </p>
----
 
 ## What is it? How do you use it?
 Bajablast.live is a website that displays the current status of the Baja Blast Freeze machine at a specific Taco Bell Location. Because there is no API for the Baja Blast machine, we decided to opt for a community driven, user reporting system to determine machine status. 
