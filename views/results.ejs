@@ -49,12 +49,6 @@
           <tbody>
             <tr style="height: 50%">
               <td style="border-width: 0px; height: 80px">
-                <% window.onload = displayClock(); %>
-                <% function displayClock(){ %>
-                  <%  var display = new Date().toLocaleTimeString();  %>
-                  <%  setTimeout(displayClock, 1000);  %>
-                  <% }  %>
-                
              <% let addressURL=location.address %> 
                   <button data-type="working" class="btn btn-primary, btn" type="button" id="yesButton" onclick="yesSubmit('<%= addressURL %>');"
                     style="
@@ -71,7 +65,7 @@
                       border-width: 5px;
                       border-color: rgb(0, 0, 0);
                     ">
-                    Working @  <%= display %>
+                    Working @ <span id = "workingLiveTime"></span>
                   </button>
               </td>
             </tr>
@@ -92,7 +86,7 @@
                       border-width: 5px;
                       border-color: rgb(0, 0, 0);
                     ">
-                  Not Working
+                  Not Working @ <span id = "notWorkingLiveTime"></span>
                 </button>
               </td>
             </tr>
@@ -150,6 +144,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script> 
   <script type = "text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
   
+  <script>
+    window.onload = displayClock();
+    function displayClock(){
+      var display = new Date().toLocaleTimeString();
+      let workingLiveTime = document.getElementById("workingLiveTime");
+      let notWorkingLiveTime = document.getElementById("notWorkingLiveTime");
+      workingLiveTime.innerHTML = display;
+      notWorkingLiveTime.innerHTML = display;
+      setTimeout(displayClock, 1000); 
+    }
+  </script>
+
   <script>
     const baseURL = "https://bajablast.live"
     async function yesSubmit(addressURL) {
