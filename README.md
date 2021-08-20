@@ -18,7 +18,7 @@ Currently we have over 6,000 locations supported in the United States and we wil
 ## How did you make it? What did you use?
 It took us about a month to develop. For languages, we used Javascript and HTML/CSS.
 
-####Our full tech stack includes:
+**Our full tech stack includes:**
 
 **Node.js** - Our runtime enviroment
 
