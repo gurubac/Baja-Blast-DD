@@ -5,7 +5,7 @@
     <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/ResultsScreenshot.png" />
 </p>
 
-## What is it? How do you use it?
+## <font color = 03fc94>What is it? How do you use it? </font>
 Bajablast.live is a website that displays the current status of the Baja Blast Freeze machine at a specific Taco Bell Location. Because there is no API for the Baja Blast machine, we decided to opt for a community driven, user reporting system to determine machine status. 
 
 Users begin by searching for a Taco Bell location using the search bar, and can optionally use the embedded Google map to find the nearest Taco bell location. Once an address is clicked, users are directed to a page where they can view the most recent user submitted. Users can also choose to add to the recent results by clicking a button indicating if the machine is or is not working. 
