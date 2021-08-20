@@ -1,5 +1,5 @@
 # Bajablast.live
-### A user report based down detector for Taco Bell's Baja Blast Freeze.
+## A user report based down detector for Taco Bell's Baja Blast Freeze.
 <p>
   <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/HomepageScreenshot.png" />
     <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/ResultsScreenshot.png" />
