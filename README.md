@@ -20,9 +20,9 @@ It took us about a month to develop. For languages, we used Javascript and HTML/
 
 **Our full tech stack includes:**
 
-**Node.js** - Our runtime enviroment
+**Node.js** - Our runtime enviroment.
 
-**Bootstrap Studio** - To design and create our webpages
+**Bootstrap Studio** - To design and create our webpages.
 
 **GIMP** -  To edit photos used on the site as well as create designs for webpages. 
 
