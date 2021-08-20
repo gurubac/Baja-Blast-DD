@@ -49,6 +49,12 @@
           <tbody>
             <tr style="height: 50%">
               <td style="border-width: 0px; height: 80px">
+                <% window.onload = displayClock(); %>
+                <% function displayClock(){ %>
+                  <%  var display = new Date().toLocaleTimeString();  %>
+                  <%  setTimeout(displayClock, 1000);  %>
+                  <% }  %>
+                
              <% let addressURL=location.address %> 
                   <button data-type="working" class="btn btn-primary, btn" type="button" id="yesButton" onclick="yesSubmit('<%= addressURL %>');"
                     style="
@@ -65,7 +71,7 @@
                       border-width: 5px;
                       border-color: rgb(0, 0, 0);
                     ">
-                    Working
+                    Working @  <%= display %>
                   </button>
               </td>
             </tr>
