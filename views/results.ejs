@@ -15,7 +15,16 @@
   <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">  
 </head>
+<style>
+  #loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: transparent url('../img/loader.gif') no-repeat center center;
+    z-index: 9999;
+  }
 
+</style>
 <body style="
   display: flex;
   flex-direction : column;
@@ -50,6 +59,7 @@
             <tr style="height: 50%">
               <td style="border-width: 0px; height: 80px">
              <% let addressURL=location.address %> 
+             
                   <button data-type="working" class="btn btn-primary, btn" type="button" id="yesButton" onclick="yesSubmit('<%= addressURL %>');"
                     style="
                       width: 61%;
@@ -65,7 +75,10 @@
                       border-width: 5px;
                       border-color: rgb(0, 0, 0);
                     ">
-                    Working @ <span id = "workingLiveTime"></span>
+                    Working @ 
+                    <span id = "workingLiveTime">
+                      <span id="loading"></div>
+                    </span>
                   </button>
               </td>
             </tr>
@@ -139,11 +152,27 @@
 
   <%- include('partials/footer') %>
   <!-- scripts -->
-  <script type = "text/js" src="/socket.io/socket.io.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script> 
   <script type = "text/js" src="../assets/bootstrap/js/bootstrap.min.js"></script>
   <script data-main="scripts/main.js" src="scripts/require.js"></script>
+
+  <script>
+    $(document).ready(function() {
+    $('#loading').fadeOut(1000);
+    displayClock();
+  });
+
+  function displayClock(){
+    var display = new Date().toLocaleTimeString();
+    let workingLiveTime = document.getElementById("workingLiveTime");
+    let notWorkingLiveTime = document.getElementById("notWorkingLiveTime");
+    workingLiveTime.innerHTML = display;
+    notWorkingLiveTime.innerHTML = display;
+    setTimeout(displayClock, 1000); 
+  }
+  </script>
  
 </script>
 
