@@ -33,12 +33,13 @@
     margin: 0 auto;
   }
   #panel {
-    height: 100%;
+    transform: translate(0, 52%);
+    height: 60%;
     width: null;
     background-color: white;
     position: fixed;
     z-index: 1;
-    overflow-x: hidden;
+    overflow-x:auto;
     transition: all .2s ease-out;
   }
   .open {
@@ -126,7 +127,7 @@
   </div>
   <br>
   <!-- search bar code -->
-  <div class="center" style="margin-bottom: 10px;">
+  <div class="center" style="margin-bottom: 10px; margin-top: 5vh;">
     <input class="corners" type="text" id="myInput" onkeyup="searchAddress()" placeholder="Enter a location..."
       title="Search for a Location" >
     <div class = "space"></div>
@@ -140,8 +141,7 @@
         <%})%>
     </ul>
   </div>
-
-  <div id="panel"></div>
+  <div id="panel"> </div>
 
   <!-- Map appears here -->
   <div id="map"></div>
