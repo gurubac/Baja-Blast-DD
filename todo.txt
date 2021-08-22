@@ -1,7 +1,9 @@
+MISC
+-put bajablast.live image somewhere on site
+-instead of bajablast image on top left navbar/header put our version with the text
 
 MAP PANEL
-- fix scaling and sizing
-- header overlaps searchbar at small resolutios, and this probably ties in with the style tag on line 22 where height is 100 percent for the whole body. 
+-map panel scaling/close button
 
 ADS
 - perhaps
