@@ -142,7 +142,8 @@ function showDetails(placeResult, marker, status) {
     let placeInfowindow = new google.maps.InfoWindow();
     let rating = "None";
     if (placeResult.rating) rating = placeResult.rating;
-    let placeResultStringArray = placeResult.formatted_address.split(",")
+    let placeResultStringArray = placeResult.formatted_address.split(",");
+    let lurl = `https://bajablast.live/${placeResultStringArray[0]}`;
     placeInfowindow.setContent(
       "<div><strong>" +
         placeResult.name +
