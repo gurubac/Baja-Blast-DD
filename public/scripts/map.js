@@ -145,7 +145,9 @@ function showDetails(placeResult, marker, status) {
     placeInfowindow.setContent(
       "<div><strong>" +
         placeResult.name +
-        "</strong><br>" +
+        "</strong><br>" + 
+        placeResult.formatted_address+
+        "<br>" +
         "Rating: " +
         rating +
         "</div>"
