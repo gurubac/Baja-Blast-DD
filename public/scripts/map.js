@@ -142,12 +142,12 @@ function showDetails(placeResult, marker, status) {
     let placeInfowindow = new google.maps.InfoWindow();
     let rating = "None";
     if (placeResult.rating) rating = placeResult.rating;
-    console.log(placeResult.formatted_address);
+    let placeResultStringArray = placeResult.formatted_address.split(",")
     placeInfowindow.setContent(
       "<div><strong>" +
         placeResult.name +
         "</strong><br>" + 
-        placeResult.formatted_address+
+        placeResultStringArray[0]+","+placeResultStringArray[1]+","+placeResultStringArray[2]+
         "<br>" +
         "Rating: " +
         rating +
