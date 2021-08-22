@@ -56,7 +56,7 @@ function initMap() {
 // Handle a geolocation error
 function handleLocationError(browserHasGeolocation, infoWindow) {
   // Set default location to Sydney, Australia
-  pos = { lat: -33.856, lng: 151.215 };
+  pos = { lat: 40.78671041552448, lng:  -73.95007711505322 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: pos,
     zoom: 15,
@@ -144,11 +144,29 @@ function showDetails(placeResult, marker, status) {
     if (placeResult.rating) rating = placeResult.rating;
     let placeResultStringArray = placeResult.formatted_address.split(",");
     let lurl = `https://bajablast.live/${placeResultStringArray[0]}`;
+    let arrLurl = lurl.split(" ");
+    let finalLurl = "";
+    for(let i = 0; i < arrLurl.length; i++){
+      if (i === arrLurl.length - 1) {
+        if (arrLurl[i] === "Rd") {
+          finalLurl += "Road"
+          break;
+        } 
+        else {
+        finalLurl += arrLurl[i]
+        }
+      } 
+      else {
+      finalLurl += arrLurl[i] + "%20"
+      }
+    }
     placeInfowindow.setContent(
       "<div><strong>" +
         placeResult.name +
         "</strong><br>" + 
-        placeResultStringArray[0]+","+placeResultStringArray[1]+","+placeResultStringArray[2]+
+        `<a href = ${finalLurl}>
+        ${placeResultStringArray[0]},${placeResultStringArray[1]},${placeResultStringArray[2]}
+        </a>` +
         "<br>" +
         "Rating: " +
         rating +
@@ -157,61 +175,7 @@ function showDetails(placeResult, marker, status) {
     placeInfowindow.open(marker.map, marker);
     currentInfoWindow.close();
     currentInfoWindow = placeInfowindow;
-    // showPanel(placeResult);
   } else {
     console.log("showDetails failed: " + status);
   }
-}
-
-/* TODO: Step 4D: Load place details in a sidebar */
-// Displays place details in a sidebar
-function showPanel(placeResult) {
-  // If infoPane is already open, close it
-  if (infoPane.classList.contains("open")) {
-    infoPane.classList.remove("open");
-  }
-
-  // Clear the previous details
-  while (infoPane.lastChild) {
-    infoPane.removeChild(infoPane.lastChild);
-  }
-
-  /* TODO: Step 4E: Display a Place Photo with the Place Details */
-  // Add the primary photo, if there is one
-  if (placeResult.photos) {
-    let firstPhoto = placeResult.photos[0];
-    let photo = document.createElement("img");
-    photo.classList.add("hero");
-    photo.src = firstPhoto.getUrl();
-    infoPane.appendChild(photo);
-  }
-
-  // Add place details with text formatting
-  let name = document.createElement("h1");
-  name.classList.add("place");
-  name.textContent = placeResult.name;
-  infoPane.appendChild(name);
-  if (placeResult.rating) {
-    let rating = document.createElement("p");
-    rating.classList.add("details");
-    rating.textContent = `Rating: ${placeResult.rating} \u272e`;
-    infoPane.appendChild(rating);
-  }
-  let address = document.createElement("p");
-  address.classList.add("details");
-  address.textContent = placeResult.formatted_address;
-  infoPane.appendChild(address);
-  if (placeResult.website) {
-    let websitePara = document.createElement("p");
-    let websiteLink = document.createElement("a");
-    let websiteUrl = document.createTextNode(placeResult.website);
-    websiteLink.appendChild(websiteUrl);
-    websiteLink.title = placeResult.website;
-    websiteLink.href = placeResult.website;
-    websitePara.appendChild(websiteLink);
-    infoPane.appendChild(websitePara);
-  }
-
-  // Open the infoPane
-  infoPane.classList.add("open");
 }
