@@ -2,8 +2,8 @@ MISC
 -put bajablast.live image somewhere on site
 -instead of bajablast image on top left navbar/header put our version with the text
 
-MAP PANEL
--map panel scaling/close button
+Info Window Google Maps
+-Make link work for info window restaurant location
 
 ADS
-- perhaps
+-perhaps

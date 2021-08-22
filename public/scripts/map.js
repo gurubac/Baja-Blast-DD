@@ -142,6 +142,7 @@ function showDetails(placeResult, marker, status) {
     let placeInfowindow = new google.maps.InfoWindow();
     let rating = "None";
     if (placeResult.rating) rating = placeResult.rating;
+    console.log(placeResult.formatted_address);
     placeInfowindow.setContent(
       "<div><strong>" +
         placeResult.name +
@@ -155,7 +156,7 @@ function showDetails(placeResult, marker, status) {
     placeInfowindow.open(marker.map, marker);
     currentInfoWindow.close();
     currentInfoWindow = placeInfowindow;
-    showPanel(placeResult);
+    // showPanel(placeResult);
   } else {
     console.log("showDetails failed: " + status);
   }
