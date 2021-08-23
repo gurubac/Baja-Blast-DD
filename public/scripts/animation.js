@@ -35,10 +35,10 @@
     
     switch (type) {
       case 'working':
-        particle.style.backgroundImage = 'url(https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Up_Sign_Emoji_Icon_ios10_large.png?v=1571606114)';
+        particle.style.backgroundImage = 'url(https://cdn.discordapp.com/attachments/388151536615948298/879502598258978826/bajablastpepe.png)';
         break;
       case 'not working':
-        particle.style.backgroundImage = 'url(https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/crying-face_1f622.png)';
+        particle.style.backgroundImage = 'url(https://cdn.discordapp.com/attachments/388151536615948298/879505260060758097/pepesad.png)';
         break;
     }
     

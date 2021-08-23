@@ -105,9 +105,8 @@ app.get("/:address", cors(), async (req, res) => {
   let address = req.params.address;
   Location.findOne({address : address}, function(err, result) {
     if (!result) {
-       res.send("this is not a valid address")
+       res.render("errorPage");
     } 
-    
     else {
       let data = result;
       res.render("results", {
