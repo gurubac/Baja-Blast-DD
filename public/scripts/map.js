@@ -144,6 +144,7 @@ function showDetails(placeResult, marker, status) {
     if (placeResult.rating) rating = placeResult.rating;
     let placeResultStringArray = placeResult.formatted_address.split(",");
     let lurl = `https://bajablast.live/${placeResultStringArray[0]}`;
+    console.log(lurl);
     let arrLurl = lurl.split(" ");
     let finalLurl = "";
     for(let i = 0; i < arrLurl.length; i++){
