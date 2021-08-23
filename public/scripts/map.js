@@ -55,8 +55,8 @@ function initMap() {
 
 // Handle a geolocation error
 function handleLocationError(browserHasGeolocation, infoWindow) {
-  // Set default location to Sydney, Australia
-  pos = { lat: 40.78671041552448, lng:  -73.95007711505322 };
+  // Set default location to Santa Clara, CA
+  pos = { lat: 37.33961555540115, lng: -121.97218586417583 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: pos,
     zoom: 15,
@@ -148,13 +148,7 @@ function showDetails(placeResult, marker, status) {
     let finalLurl = "";
     for(let i = 0; i < arrLurl.length; i++){
       if (i === arrLurl.length - 1) {
-        if (arrLurl[i] === "Rd") {
-          finalLurl += "Road"
-          break;
-        } 
-        else {
         finalLurl += arrLurl[i]
-        }
       } 
       else {
       finalLurl += arrLurl[i] + "%20"
