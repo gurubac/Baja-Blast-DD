@@ -1,3 +1,4 @@
+//dependencies
 require("dotenv").config();
 const express = require("express");
 const app = express();
@@ -8,7 +9,7 @@ const Location = require("../models/Location");
 const cors = require('cors')
 const nodemailer = require("nodemailer");
 
-//connect to mongodb
+//mongo URL
 const mongoURL = process.env.MONGO_URL;
 
 //get dummy email auth credentials
@@ -18,6 +19,7 @@ const PASSWORD = process.env.PASSWORD;
 //get real email address
 const REAL_EMAIL = process.env.REAL_EMAIL;
 
+//connect to mongodb
 mongoose
   .connect(mongoURL, {
     useNewUrlParser: true,
@@ -31,21 +33,20 @@ mongoose
   .catch((err) => {
     signale.error(err);
   });
-  
+
+//app.use()
 app.use(cors())
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-async function findUser(address) {
-  return Location.findOne({ address: address });
-}
-
+//contact form render
 app.get("/contact", cors(), async (req, res) => {
   res.render("contact")
 });
 
+//contact page nodemailer stuff
 app.post("/contact", cors(), function(request, response) {
   // create reusable transporter object using the default SMTP transport
 	const transporter = nodemailer.createTransport({
@@ -84,6 +85,7 @@ app.post("/contact", cors(), function(request, response) {
 	});
 });
 
+//index
 app.get("/", cors(), (req, res) => {
   Location.find({}, function (err, locations) {
     //console.log(location);
@@ -93,15 +95,29 @@ app.get("/", cors(), (req, res) => {
   });
 });
 
+//handle case of user going to /address
+app.get("/address", cors(), async (req, res) => {
+  res.send("u cant go here bro");
+});
+
+//error handling for invalid address included
 app.get("/:address", cors(), async (req, res) => {
   let address = req.params.address;
-  let data = await findUser(address);
-
-  res.render("results", {
-    location: data,
-  })
+  Location.findOne({address : address}, function(err, result) {
+    if (!result) {
+       res.send("this is not a valid address")
+    } 
+    
+    else {
+      let data = result;
+      res.render("results", {
+        location: data,
+      })
+    }
+  });
 });
-   
+
+//post endpoint for updating a location's status/timestamp
 app.post("/:address/info", cors(), async (req, res) => {
   let data = req.body;
   let address = req.params.address;
