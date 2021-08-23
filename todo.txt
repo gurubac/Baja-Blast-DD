@@ -1,7 +1,3 @@
-MISC
--put bajablast.live image somewhere on site
--instead of bajablast image on top left navbar/header put our version with the text
-
 Info Window Google Maps
 -Make link work for info window restaurant location
 

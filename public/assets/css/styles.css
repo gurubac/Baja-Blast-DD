@@ -1,7 +1,7 @@
 .center{
     text-align: center;
     align-items: center;
-    padding-top: calc(innerHeight - 500);
+    /* padding-top: calc(innerHeight - 500); */
 }
 .corners{
     border-radius: 25px;
@@ -18,3 +18,31 @@
     color: rgb(255, 255, 255);
     opacity: 1;
   }
+.BajaBlastWords{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+padding-top: 5%;
+/* height: auto; */
+}
+@media screen and (max-width: 767px) {   
+    .BajaBlastWords{
+        display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+padding-top: 5%;
+    } 
+}
+
+@media screen and (min-width: 768px) {      
+    .BajaBlastWords{     
+         display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+        padding-top: 1%;
+    	
+    } 
+} 
