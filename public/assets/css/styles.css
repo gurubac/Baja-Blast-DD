@@ -1,7 +1,6 @@
 .center{
     text-align: center;
     align-items: center;
-    /* padding-top: calc(innerHeight - 500); */
 }
 .corners{
     border-radius: 25px;
@@ -27,16 +26,20 @@ padding-top: 5%;
 /* height: auto; */
 }
 @media screen and (max-width: 767px) {   
+    /*PHONE*/
     .BajaBlastWords{
         display: block;
 margin-left: auto;
 margin-right: auto;
-width: 50%;
+width: 90%;
+/* height:9%; */
 padding-top: 5%;
     } 
+
 }
 
 @media screen and (min-width: 768px) {      
+    /* DESKTOP */
     .BajaBlastWords{     
          display: block;
         margin-left: auto;

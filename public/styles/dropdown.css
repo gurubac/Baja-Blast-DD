@@ -10,6 +10,7 @@
     margin-bottom: 0px; /* Add some space below the input */
     color: #ffffff;
   }
+ 
   #myInput:focus {
     outline: none !important;
     border:1px solid rgb(128, 126, 126);
@@ -44,3 +45,22 @@
   #myUL li a:hover:not(.header) {
     background-color: rgb(68, 68, 68); /* Add a hover effect to all links, except for headers */
   }
+  @media screen and (max-width: 767px) {   
+    /*PHONE*/
+   #myInput{
+     width:90%;
+   }
+   #myUL li a {
+    width:90%
+    } 
+}
+
+@media screen and (min-width: 768px) {      
+    /* DESKTOP */
+    #myInput{
+  width:60%;
+    }
+    #myUL li a {
+width:60%
+} 
+}
