@@ -2,6 +2,7 @@
 <html lang="en" style="color: rgb(0, 0, 0); font-family: Aclonica, sans-serif">
 
 <head>
+    <!--Google Analytics partial tag -->
   <%- include('partials/scriptTagManager') %>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
@@ -15,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">  
 </head>
+  <!--Loading Gif styling-->
 <style>
   #loadingWorking, #loadingNotWorking {
     position: absolute;
@@ -24,7 +26,6 @@
     transform: scale(0.3) translate(-110%, -115%);
     background: transparent url('../img/loader.gif') no-repeat; 
   }
-
 </style>
 <body style="
   display: flex;
@@ -35,6 +36,7 @@
   font-family: Alatsi, sans-serif;
   width: 100%; ">
  <%- include('partials/noScriptTagManager') %>
+   <!--Include Navbar partial -->
  <%- include('partials/header') %>
   <div>
     <div style="width: 100%; height: 100%;">
