@@ -45,14 +45,14 @@ particle {
 @media screen and (max-width: 767px) {   
   /*PHONE*/
   .buttonSizing{
-width:100%;
+  width:100%;
   }
 }
 
 @media screen and (min-width: 768px) {      
   /* DESKTOP */
   .buttonSizing{
-    width:60%;
+    width:20%;
 
   }
 } 
