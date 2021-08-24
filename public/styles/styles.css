@@ -41,3 +41,18 @@ particle {
   position: absolute;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/mario-face.png);
 }
+
+@media screen and (max-width: 767px) {   
+  /*PHONE*/
+  .buttonSizing{
+width:100%;
+  }
+}
+
+@media screen and (min-width: 768px) {      
+  /* DESKTOP */
+  .buttonSizing{
+    width:60%;
+
+  }
+} 
