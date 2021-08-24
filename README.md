@@ -3,6 +3,9 @@
 <p>
   <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/HomepageScreenshot.png" />
     <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/ResultsScreenshot.png" />
+        <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/searchBarMobile.jpg" />
+            <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/machineWorkingMobile.jpg" />
+                <img src="https://raw.githubusercontent.com/gurubac/Baja-Blast-DD/main/public/img/mobileError.jpg" />
 </p>
 
 ## What is it? How do you use it?
