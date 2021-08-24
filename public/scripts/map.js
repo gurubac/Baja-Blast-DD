@@ -147,24 +147,23 @@ function showDetails(placeResult, marker, status) {
     console.log(lurl);
     let arrLurl = lurl.split(" ");
     let finalLurl = "";
-    for(let i = 0; i < arrLurl.length; i++){
+    for (let i = 0; i < arrLurl.length; i++) {
       if (i === arrLurl.length - 1) {
-        finalLurl += arrLurl[i]
-      } 
-      else {
-      finalLurl += arrLurl[i] + "%20"
+        finalLurl += arrLurl[i];
+      } else {
+        finalLurl += arrLurl[i] + "%20";
       }
     }
-    
+
     //alternatively the text wrapped in the a href could be done like this
     //${placeResultStringArray[0]},${placeResultStringArray[1]},${placeResultStringArray[2]}
 
     placeInfowindow.setContent(
       "<div><strong>" +
         placeResult.name +
-        "</strong><br>" + 
+        "</strong><br>" +
         `<a href = ${finalLurl}>
-        ${[0,1,2].map(i => placeResultStringArray[i]).join(',')}
+        ${[0, 1, 2].map((i) => placeResultStringArray[i]).join(",")}
         </a>` +
         "<br>" +
         "Rating: " +

@@ -1,66 +1,70 @@
 #myInput {
-    background-image: url('/assets/css/Searchicon.png'); /* Add a search icon to input */
-    background-size: 29px;
-    background-position: 6px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 60%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    /* border: 1px solid #ddd; Add a grey border */
-    margin-bottom: 0px; /* Add some space below the input */
-    color: #ffffff;
-  }
- 
-  #myInput:focus {
-    outline: none !important;
-    border:1px solid rgb(128, 126, 126);
-    box-shadow: 0 0 12px 4px rgb(162, 93, 199);
-  }
-  #myUL {
-    /* Remove default list styling */
-    color: rgb(0,10,0);
-   /* display: inline; */
-    display: none;
-    margin: 0 auto;
-    list-style-type: none;
-    padding: 0;
-   /* margin: 0;*/
-  }
-  
-  #myUL li a {
-    display: inline;
-    margin: 0 auto;
-   /* border: 1px solid #ddd; /* Add a border to all links */
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #1d1b1b; /* Grey background color #f6f6f6; */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove default text underline */
-    font-size: 18px; /* Increase the font-size */
-    color: rgb(168, 175, 169); /* Add a black text color */
-    display: block; /* Make it into a block element to fill the whole list */
-    width: 60%;
-    text-align: left;
-  }
-  
-  #myUL li a:hover:not(.header) {
-    background-color: rgb(68, 68, 68); /* Add a hover effect to all links, except for headers */
-  }
-  @media screen and (max-width: 767px) {   
-    /*PHONE*/
-   #myInput{
-     width:90%;
-   }
-   #myUL li a {
-    width:90%
-    } 
+  background-image: url("/assets/css/Searchicon.png"); /* Add a search icon to input */
+  background-size: 29px;
+  background-position: 6px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 60%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  /* border: 1px solid #ddd; Add a grey border */
+  margin-bottom: 0px; /* Add some space below the input */
+  color: #ffffff;
 }
 
-@media screen and (min-width: 768px) {      
-    /* DESKTOP */
-    #myInput{
-  width:60%;
-    }
-    #myUL li a {
-width:60%
-} 
+#myInput:focus {
+  outline: none !important;
+  border: 1px solid rgb(128, 126, 126);
+  box-shadow: 0 0 12px 4px rgb(162, 93, 199);
+}
+#myUL {
+  /* Remove default list styling */
+  color: rgb(0, 10, 0);
+  /* display: inline; */
+  display: none;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+  /* margin: 0;*/
+}
+
+#myUL li a {
+  display: inline;
+  margin: 0 auto;
+  /* border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #1d1b1b; /* Grey background color #f6f6f6; */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: rgb(168, 175, 169); /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+  width: 60%;
+  text-align: left;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: rgb(
+    68,
+    68,
+    68
+  ); /* Add a hover effect to all links, except for headers */
+}
+@media screen and (max-width: 767px) {
+  /*PHONE*/
+  #myInput {
+    width: 90%;
+  }
+  #myUL li a {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* DESKTOP */
+  #myInput {
+    width: 60%;
+  }
+  #myUL li a {
+    width: 60%;
+  }
 }

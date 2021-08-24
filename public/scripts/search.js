@@ -1,7 +1,6 @@
-
 function searchAddress() {
-  //First, set visibility of the unordered list once user enter text 
-  //Then search for results :O 
+  //First, set visibility of the unordered list once user enter text
+  //Then search for results :O
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
@@ -12,7 +11,7 @@ function searchAddress() {
   if (ul.style.display === "none") {
     ul.style.display = "inline";
   } else if (input.value.length == 0) {
-    ul.style.display = "none"
+    ul.style.display = "none";
   } else {
     ul.style.display = "inline";
   }

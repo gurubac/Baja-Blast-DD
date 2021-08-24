@@ -1,3 +1,5 @@
+//Manually creating a user option
+
 const User = require("./models/Location");
 
 async function createUser() {

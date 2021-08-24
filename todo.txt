@@ -1,1 +1,2 @@
-Looking for new things to add!
+SEARCHBAR
+- searchbar clear button

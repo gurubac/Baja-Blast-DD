@@ -35,6 +35,8 @@ It took us about a month to develop. For languages, we used Javascript and HTML/
 
 **Moment JS** - To add timestamps to machine status submissions.
 
+**Require JS** - To organize and require some scripts on the front end, and to improve page loading time.
+
 **Google Maps API** - Displays Taco Bell locations close to the user in an embedded map on the home page. 
 
 **NodeMailer** - To receive emails from users for the Contact page. We can recieve suggestions or comments whether or not a user chooses to input a legitimate email. This is done through a dummy email sending to our actual email.
