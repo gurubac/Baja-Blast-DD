@@ -26,4 +26,3 @@ async function createUser() {
 
 console.log("Starting User.js");
 createUser();
-//test comment
