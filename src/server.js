@@ -99,7 +99,7 @@ app.get("/", cors(), (req, res) => {
 
 //handle case of user going to /address
 app.get("/address", cors(), async (req, res) => {
-  res.send("u cant go here bro");
+  res.render("errorPage");
 });
 
 //error handling for invalid address included
@@ -107,7 +107,9 @@ app.get("/:address", cors(), async (req, res) => {
   let address = req.params.address;
   Location.findOne({ address: address }, function (err, result) {
     if (!result) {
-      res.render("errorPage");
+      res.render("errorPage", {
+        addressError : address
+      });
     } else {
       let data = result;
       res.render("results", {
