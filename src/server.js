@@ -9,6 +9,9 @@ const Location = require("../models/Location");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
+// To manually add a user to the database in case our database doesn't have brand new locations
+// const User = require("../User");
+
 //mongo URL
 const mongoURL = process.env.MONGO_URL;
 
