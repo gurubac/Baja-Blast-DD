@@ -9,7 +9,7 @@
 ## What is it? How do you use it?
 Bajablast.live is a website that displays the current status of the Baja Blast Freeze machine at a specific Taco Bell Location. Because there is no API for the Baja Blast machine, we decided to opt for a community driven, user reporting system to determine machine status. 
 
-Users begin by searching for a Taco Bell location using the search bar, and can optionally use the embedded Google map to find the nearest Taco bell location. Once an address is clicked, users are directed to a page where they can view the most recent user submissions. Users can also choose to add to the recent results by clicking a button indicating if the machine is or is not working. 
+Users begin by searching for a Taco Bell location using the search bar, and can optionally use the embedded Google map to find nearby Taco Bell locations. Once an address is clicked, users are directed to a page where they can view the most recent user submissions. Users can also choose to add to the recent results by clicking a button indicating if the machine is or is not working. 
 ## Why? What problem did this solve?
 One of the main reasons for going to Taco Bell is to get a Baja Blast Freeze. However, you only know whether or not the freeze machine is working once you order. The machine could be in the process of mixing the syrup, freezing the drink to turn it into the slushy state, or just not working at all. It isn't uncommon to go to Taco Bell with the intention of getting a Baja Blast Freeze only to return empty handed because the freeze machine was not ready to serve/not working. Wouldn't it be nice to know whether or not the freeze machine was working before you go? That's the problem we aimed to solve. 
 
