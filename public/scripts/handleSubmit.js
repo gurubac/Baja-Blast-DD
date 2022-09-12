@@ -1,4 +1,4 @@
-const baseURL = "https://bajablast.live";
+const baseURL = "https://bajablastlive.herokuapp.com";
 async function yesSubmit(addressURL) {
   //console.log("yes button was clicked")
   let timestamp = moment(new Date()).format("h:mm:ss A - MMMM Do, YYYY");

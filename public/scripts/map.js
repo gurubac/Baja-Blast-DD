@@ -143,7 +143,7 @@ function showDetails(placeResult, marker, status) {
     let rating = "None";
     if (placeResult.rating) rating = placeResult.rating;
     let placeResultStringArray = placeResult.formatted_address.split(",");
-    let lurl = `https://bajablast.live/${placeResultStringArray[0]}`;
+    let lurl = `https://bajablastlive.herokuapp.com/${placeResultStringArray[0]}`;
     console.log(lurl);
     let arrLurl = lurl.split(" ");
     let finalLurl = "";
